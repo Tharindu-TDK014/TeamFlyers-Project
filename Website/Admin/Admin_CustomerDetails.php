@@ -44,7 +44,7 @@
               <tbody>
 			 <?php
 		
-		 $con = mysqli_connect("localhost: 3308","root","","nse_e_com-1");
+		 $con = mysqli_connect("localhost: 3308","root","","nse_e_com");
 		if(!$con)
 		{	
 			die("Cannot connect to DB server");	
@@ -75,7 +75,8 @@
                 </tr>
                
         <?php
-			}}
+			}
+		}
 			?>
     
     
