@@ -99,7 +99,7 @@
 <div class="container-promotion">
 	<h2> Promotions </h2>
 	<?php
-		$con = mysqli_connect("localhost","root","","nse_e_com");
+		$con = mysqli_connect("localhost: 3308","root","","nse_e_com");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		
@@ -150,7 +150,7 @@
 	<!-- Displaying all the products-->
 	<div class="product-container">
 	<?php
-		$con = mysqli_connect("localhost","root","","nse_e_com");
+		$con = mysqli_connect("localhost: 3308","root","","nse_e_com");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		

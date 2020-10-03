@@ -12,7 +12,7 @@
 	$zip=$_POST["txt_zipcode"];
 	
     //connecting to database
-    $con=mysqli_connect("localhost","root","","nse_e_com");
+    $con=mysqli_connect("localhost: 3308","root","","nse_e_com");
     if(!$con){
         die("Error occured in db connection, Please try again");
     }

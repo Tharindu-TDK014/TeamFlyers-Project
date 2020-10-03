@@ -1,0 +1,102 @@
+/*CSS Documnet*/
+/*Importing google font styles*/
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url(../Images/login-background.png);
+	background-size:auto;
+	background-repeat: no-repeat;
+	background-position:center;
+	font-family: sans-serif;
+}
+
+
+h2{
+	font-style: bold;
+	font-family:Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	color:#FDFDFD;
+	margin: 0;
+	text-align: center;
+	margin-top: -30px;
+	margin-bottom:30px;	
+}
+
+h3{
+	font-style: bold;
+	font-family:Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	color:#FDFDFD;
+	margin: 0;
+	text-align: center;
+	margin-top: -10px;
+	margin-bottom:30px;	
+}
+
+
+.loginbox{
+	width: 350px;
+	height: 400px;
+	background:#203C7B;
+	color:#fff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	opacity: 86%;
+	padding: 70px 50px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
+}
+
+.loginbox input{
+	width:100%;
+	margin-bottom: 30px;
+}
+
+.loginbox input[type="text"]{
+	background: #0E1645;
+	border-color: #24D4EE;
+	font-family:Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;;
+	font-size: 14px;
+	border:none;
+	color:white;
+	text-align: left;
+	height: 35px;
+
+}
+
+.loginbox input[type="password"]{
+	background: #0E1645;
+	border-color: #24D4EE;
+	font-family:Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;;
+	font-size: 14px;
+	border:none;
+	color:white;
+	text-align: left;
+	height: 35px;
+
+}
+
+button:hover {
+    opacity: 0.8;;
+}
+
+button{
+	border: none;
+	outline: none;
+	height: 40px;
+	width: 200px;
+	color:#ffff;
+	font-size: 18px;
+	font-weight: bold;
+	font-family:Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;;
+	background:#0AAE1D;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}

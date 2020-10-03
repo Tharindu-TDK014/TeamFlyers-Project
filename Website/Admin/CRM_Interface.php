@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Customer Relationship Management - Nipun Spice Exports</title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
+
+<?php session_start();
+
+if(!isset($_SESSION["admin"]))
+{
+  header('Location:CRM_Login.php');
+}
+?> 
+
+<?php require('Include/headerCRM.php'); ?>
+<?php require('Include/functions.php'); ?>
+
+<hr class="my-2">
+<div class="container">
+<div class="jumbotron">
 	
-</body>
-</html>
+	<div class="row">	
+		<div class="col-2" >
+            <H2 class="head2"><?php display_greeting() ?></H2>
+        </div>
+		<div class="col-6" >
+            <img src="Images/crm-trends-header.png" alt="" style="width: 800px; height: 600px;">
+     </div>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5">
+
+<?php require('Include/footerCRM.php'); ?>

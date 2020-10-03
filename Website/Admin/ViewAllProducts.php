@@ -1,0 +1,72 @@
+<?php session_start();
+
+if(!isset($_SESSION["admin"]))
+{
+  header('Location:CRM_Login.php');
+}
+?>
+
+<?php require('Include/headerCRM.php'); ?>
+
+<div class="jumbotron">
+<h1 class="head22" align="center">All Products</h1>
+
+<table class="table" >
+  <tr bgcolor="#44D46D">
+    <td>Num</td>
+    <td>Product ID</td>
+    <td>Product Qty</td>
+    <td>Product Name</td>
+    <td>Product Type</td>
+    <td>Product Description</td>
+    <td>Product Price</td>
+    <td>Product Manufacture Date</td>
+    <td>Product Expiary Date</td>
+    <td>Product Stock ID</td>
+    <td>Product Status</td>
+    <td>Product Offer Price</td>
+  </tr>
+<?php
+		
+		 $con = mysqli_connect("localhost: 3308","root","","nse_e_com");
+		if(!$con)
+		{	
+			die("Cannot connect to DB server");	
+		}
+				  
+				  $sql ="SELECT * FROM `product` ";
+				  
+					
+		$result = mysqli_query($con,$sql);
+			
+		if(mysqli_num_rows($result)> 0)
+	{
+			while($row = mysqli_fetch_assoc($result))
+			{
+			
+?>
+
+                <tr>
+                  <td class="counterCell"></td>
+                  <td><?php echo $row['P_ID'] ?></td>
+                  <td><?php echo $row['P_Qty'] ?></td>
+                  <td><?php echo $row['P_Name'] ?></td>
+                  <td><?php echo $row['P_Type'] ?></td>
+                  <td><?php echo $row['P_Description'] ?></td>
+                  <td><?php echo $row['P_Price'] ?></td>
+                  <td><?php echo $row['P_ManDate'] ?></td>
+                  <td><?php echo $row['P_ExpDate'] ?></td>
+                  <td><?php echo $row['Stock_ID'] ?></td>
+                  <td><?php echo $row['P_Status'] ?></td>
+                  <td><?php echo $row['P_OfferPrice'] ?></td>
+                </tr>
+
+        <?php
+      }
+    }
+      ?>
+                </table>
+
+              </div>
+
+<?php require('Include/footerCRM.php'); ?>
