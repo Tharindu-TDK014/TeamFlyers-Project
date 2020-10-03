@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -98,13 +99,13 @@
 <div class="container-promotion">
 	<h2> Promotions </h2>
 	<?php
-		$con = mysqli_connect("localhost","root","","nse");
+		$con = mysqli_connect("localhost","root","","nse_e_com");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		
 			}
 		 //retrieving values from sql
-			$sql ="SELECT * FROM `product` WHERE `P_offer_status`='1'";	
+			$sql ="SELECT * FROM `product` WHERE `P_Offers`='1'";	
 					
 		$result = mysqli_query($con,$sql);
 			
@@ -114,10 +115,10 @@
 			{
 				?>
 	<form method="post" action="">
-	<div class="row">
-		<div class="col-md-3">
+	
+	<div class="col-md-3">
 			<div class="product-top">
-			<img src="<?php echo $row['file_path']?>" class="img-rounded"   />
+			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
 			<div class="overlay">
 			<button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart"></i></button>	
 			<a  href="details.php?pid=<?php echo $row['P_ID']; ?>" ><button type="button" class="btn btn-secondary" title="More Details"><i class="fa fa-search"></i></button>
@@ -127,15 +128,11 @@
 		<div class="product-bottom text-center">
 		<h3> <?php echo $row["P_Name"]; ?> </h3>
 		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
-		<form action="addtocart.php" method="post">
-            <input type="number" name="quantity" value="1" min="1" max="<?=$product['P_Qty']?>" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="<?=$product['P_ID']?>">
-            <input type="submit" value="Add To Cart">
-        </form>
+		</div>
+		</div>
 			
-		</div>
-		</div>
-		</div>
+	</form>
+		
      	
     
 	
@@ -147,11 +144,13 @@
 	
 	?>
 	</div>
+	</div>
 	
 	
 	<!-- Displaying all the products-->
+	<div class="product-container">
 	<?php
-		$con = mysqli_connect("localhost","root","","nse");
+		$con = mysqli_connect("localhost","root","","nse_e_com");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		
@@ -167,11 +166,11 @@
 			{
 				?>
 	
-	<div class="row">
-		<div class="card">
-		<div class="col-md-3">
+	
+		
+			<div class="col-md-3">
 			<div class="product-top">
-			<img src="<?php echo $row['file_path']?>" class="img-rounded"   />
+			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
 			<div class="overlay">
 			<button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart"></i></button>	
 			<a  href="details.php?pid=<?php echo $row['P_ID']; ?>" ><button type="button" class="btn btn-secondary" title="More Details"><i class="fa fa-search"></i></button>
@@ -182,14 +181,14 @@
 		<h3> <?php echo $row["P_Name"]; ?></h3>
 		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
 		<form action="addtocart.php" method="post">
-            <input type="number" name="quantity" value="1" min="1" max="<?=$product['P_Qty']?>" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="<?=$product['P_ID']?>">
+            <input type="number" name="quantity" value="1" min="1" max="" placeholder="Quantity" required>
+            <input type="hidden" name="product_id" value="">
             <input type="submit" value="Add To Cart">
         </form>
 			
 		</div>
-		</div>
-		</div>
+	</div>
+		
 
      	
     
@@ -203,8 +202,8 @@
 	?>
 	
 	
-	
 	</div>
+	
 
 
 </body>
