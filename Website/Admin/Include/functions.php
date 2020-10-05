@@ -1,14 +1,21 @@
 <?php 
 function display_greeting() {
-	$hour = date('h'); // hour of current time
+ 
+	function timezone_offset_string( $offset )
+	{
+		return sprintf( "%s%02d:%02d", ( $offset >= 0 ) ? '+' : '-', abs( $offset / 3600 ), abs( $offset % 3600 ) );
+	}
 
-	if ($hour >= 0 and $hour <= 11) {
+	$offset = timezone_offset_get( new DateTimeZone('America/Winnipeg'), new DateTime() );
+	echo "offset: " . timezone_offset_string( $offset ) . "\n";
+	
+	if ($offset >= 0 and $offset <= 11) {
 		echo "Good Morning Admin !";
-	} elseif ($hour >= 12 and $hour <=17) {
+	} elseif ($offset >= 12 and $offset <=17) {
 		echo "Good Afternoon Admin !";
 	}else {
 		echo "Good Evening Admin !";
 	}
 }
 
- ?>
+?>

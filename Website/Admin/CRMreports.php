@@ -9,7 +9,7 @@ if(!isset($_SESSION["admin"]))
 <?php require('Include/headerCRM.php'); ?>
 
 <div class="jumbotron">
-<h1 class="head22" align="center">All Posts</h1>
+<h1 class="head22" align="center">Payment Reports</h1>
 
 <script src="js/min.js"></script>
 <script src="js/pdf.js"></script>
