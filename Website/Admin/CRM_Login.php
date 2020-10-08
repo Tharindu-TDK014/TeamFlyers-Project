@@ -53,7 +53,7 @@
 		              $password=$_POST["txtpassword"];
 		              $valid = false;
                         //Database connection
-		                $con = mysqli_connect("localhost: 3308","root","","nse_e_com");
+		                $con = mysqli_connect("localhost: 3308","root","","e_com_db");
                         if(!$con){
                             die("Error occured in db connection, Please try again");
                         }

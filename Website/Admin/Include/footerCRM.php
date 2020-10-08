@@ -1,11 +1,10 @@
   <!--Footer Section-->
 <footer>
 
-<div class="container-fluid">
-      <div class="jumbotron">  <!--bootstrap jumbotron-->
+<div class="container-fluid" style="background:#086287">
+      <div class="jumbotron" style="background: #037CA9; color: #FBFBFB">  <!--bootstrap jumbotron-->
         <h1 class=" h1 display-4">Best Quality Spice Products From Sri Lanka</h1>
         <div class="col-12 text-right ">
-        <a class="btn btn-primary btn-outline-light" href="LogoutCRM.php" role="button">Logout From CRM</a>
         <hr class="my-2">
         <p class="plp text-center">2020 All Rights Reserved &nbsp; Email Us: nipunsppiceexports@gmail.com
         &nbsp; Contact Us:+9477855855</p>

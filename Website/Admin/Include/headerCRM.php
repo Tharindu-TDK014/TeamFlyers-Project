@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="./CSS/crm_style.css">
 
 </head>
-<body>
+<body style="background: #424755; color:#F6F6FA">
 <!--Header section-->
 <header class="header">
 	<div class="container" > <!--Bootstrap Container-->
@@ -25,7 +25,7 @@
 		<h2 class="h2 mt-3" >NIPUN SPICE EXPORTS</h2>
 		</div>
 	<div class="col-md-4 col-12 text-right ">   <!--bootstrap grid column layout-->
-
+         <a class="btn btn-success mt-4 ml-5" href="LogoutCRM.php" role="button">Logout From CRM</a>
 	</div>
 		
 	</div>	<!--/bootstrap grid row--> 

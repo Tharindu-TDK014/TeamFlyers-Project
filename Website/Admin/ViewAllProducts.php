@@ -8,11 +8,11 @@ if(!isset($_SESSION["admin"]))
 
 <?php require('Include/headerCRM.php'); ?>
 
-<div class="jumbotron">
+<div class="jumbotron" style="background:#9C9B7B"> 
 <h1 class="head22" align="center">All Products</h1>
 
 <table class="table" >
-  <tr bgcolor="#44D46D">
+  <tr bgcolor="#5B8C43">
     <td>Num</td>
     <td>Product ID</td>
     <td>Product Qty</td>
@@ -23,12 +23,11 @@ if(!isset($_SESSION["admin"]))
     <td>Product Manufacture Date</td>
     <td>Product Expiary Date</td>
     <td>Product Stock ID</td>
-    <td>Product Status</td>
     <td>Product Offer Price</td>
   </tr>
 <?php
 		
-		 $con = mysqli_connect("localhost: 3308","root","","nse_e_com");
+		 $con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
 		{	
 			die("Cannot connect to DB server");	
@@ -57,7 +56,6 @@ if(!isset($_SESSION["admin"]))
                   <td><?php echo $row['P_ManDate'] ?></td>
                   <td><?php echo $row['P_ExpDate'] ?></td>
                   <td><?php echo $row['Stock_ID'] ?></td>
-                  <td><?php echo $row['P_Status'] ?></td>
                   <td><?php echo $row['P_OfferPrice'] ?></td>
                 </tr>
 

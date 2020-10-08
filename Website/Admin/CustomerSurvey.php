@@ -8,11 +8,11 @@ if(!isset($_SESSION["admin"]))
 
 <?php require('Include/headerCRM.php'); ?>
 
-<div class="jumbotron">
+<div class="jumbotron" style="background:#9C9B7B ">
 <h1 class="head22" align="center">Product Review</h1>
 
-<table class="table table-bordered" >
-  <tr>
+<table class="table " >
+  <tr bgcolor="#119266">
     <td>Num</td>
     <td>Review ID</td>
     <td>Product ID</td>
@@ -22,7 +22,7 @@ if(!isset($_SESSION["admin"]))
   </tr>
 <?php
 		
-		 $con = mysqli_connect("localhost: 3308","root","","nse_e_com");
+		 $con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
 		{	
 			die("Cannot connect to DB server");	
