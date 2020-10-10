@@ -17,6 +17,7 @@ if(!isset($_SESSION["admin"]))
     <td>Review ID</td>
     <td>Product ID</td>
     <td>Customer Email</td>
+    <td>Review Date</td>
     <td>Product Review</td>
     <td>Product Rating</td>
   </tr>
@@ -45,6 +46,7 @@ if(!isset($_SESSION["admin"]))
                   <td><?php echo $row['Review_ID'] ?></td>
                   <td><?php echo $row['P_ID'] ?></td>
                   <td><?php echo $row['C_Email'] ?></td>
+                  <td><?php echo $row['Review_Date'] ?></td>
                   <td><?php echo $row['P_Review'] ?></td>
                   <td><?php echo $row['P_Rating'] ?></td>
                 </tr>

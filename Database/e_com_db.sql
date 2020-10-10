@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 08, 2020 at 09:36 PM
+-- Generation Time: Oct 10, 2020 at 03:40 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -272,10 +272,10 @@ CREATE TABLE IF NOT EXISTS `product` (
 --
 
 INSERT INTO `product` (`P_ID`, `P_Qty`, `P_Name`, `P_Type`, `Stock_ID`, `P_Description`, `P_Price`, `P_ManDate`, `P_ExpDate`, `P_Offers`, `P_OfferPrice`, `P_OfferStatus`, `P_filepath`) VALUES
-(1, 100, 'NSE Cinnamon oil', 'Cinnamon-oil', 1, 'Good Quality', 5000, '2020-10-07', '2020-10-15', 500, 400, 1, ''),
-(1, 100, 'NSE Cinnamon Oil', 'Cinnamon-oil', 2, 'Good Quality', 6000, '2020-10-07', '2020-10-31', 500, 7000, 1, ''),
+(1, 100, 'NSE Cinnamon oil', 'Cinnamon-oil', 1, 'Good Quality', 5000, '2020-10-07', '2020-10-15', 1, 400, 1, ''),
+(1, 100, 'NSE Cinnamon Oil', 'Cinnamon-oil', 2, 'Good Quality', 6000, '2020-10-07', '2020-10-31', 1, 700, 1, ''),
 (2, 250, 'NSE Cinnamon Bark', 'Cinnamon-Bark', 3, 'Best Quality', 4000, '2020-10-02', '2020-10-31', 1, 500, 1, ''),
-(2, 300, 'NSE Cinnamon Bark', 'Cinnamon-Bark', 4, 'Export Quality', 8000, '2020-10-02', '2020-10-31', 1, 8000, 1, '');
+(2, 300, 'NSE Cinnamon Bark', 'Cinnamon-Bark', 4, 'Export Quality', 8000, '2020-10-02', '2020-10-31', 1, 800, 1, '');
 
 -- --------------------------------------------------------
 
@@ -289,6 +289,7 @@ CREATE TABLE IF NOT EXISTS `productreview` (
   `P_ID` int(11) NOT NULL,
   `P_Name` varchar(100) NOT NULL,
   `C_Email` varchar(100) NOT NULL,
+  `Review_Date` date NOT NULL,
   `P_Review` varchar(200) NOT NULL,
   `P_Rating` int(11) NOT NULL,
   PRIMARY KEY (`Review_ID`),
@@ -301,12 +302,12 @@ CREATE TABLE IF NOT EXISTS `productreview` (
 -- Dumping data for table `productreview`
 --
 
-INSERT INTO `productreview` (`Review_ID`, `P_ID`, `P_Name`, `C_Email`, `P_Review`, `P_Rating`) VALUES
-(1, 1, 'NSE Cinnamon oil', 'idnipunmadhushan@gmail.com ', 'Good Quality best Product from Ceylon', 10),
-(2, 1, 'NSE Cinnamon Oil', 'nileshshermal007@gmail.com ', 'Good', 6),
-(3, 1, 'NSE Cinnamon oil', 'ravindursm1@gmail.com', 'Excellent products', 10),
-(4, 2, 'NSE Cinnamon Bark', 'sanojan11@gmail.com', 'Seems good to me', 7),
-(5, 2, 'NSE Cinnamon Bark', 'tharindudk7714@gmail.com', 'Quality is good', 8);
+INSERT INTO `productreview` (`Review_ID`, `P_ID`, `P_Name`, `C_Email`, `Review_Date`, `P_Review`, `P_Rating`) VALUES
+(1, 1, 'NSE Cinnamon oil', 'idnipunmadhushan@gmail.com ', '2020-10-01', 'Good Quality best Product from Ceylon', 10),
+(2, 1, 'NSE Cinnamon Oil', 'nileshshermal007@gmail.com ', '2020-10-02', 'Good', 6),
+(3, 1, 'NSE Cinnamon oil', 'ravindursm1@gmail.com', '2020-10-03', 'Excellent products', 10),
+(4, 2, 'NSE Cinnamon Bark', 'sanojan11@gmail.com', '2020-10-04', 'Seems good to me', 7),
+(5, 2, 'NSE Cinnamon Bark', 'tharindudk7714@gmail.com', '2020-10-05', 'Quality is good', 8);
 
 -- --------------------------------------------------------
 
