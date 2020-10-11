@@ -7,19 +7,17 @@ if(!isset($_SESSION["admin"]))
 ?>
 
 <?php require('Include/headerCRM.php'); ?>
-<div class="jumbotron" style="background:#9C9B7B ">
-<h1 class="head22" align="center">All Customers</h1>
+<div class="jumbotron" style="background:#94B8EA ">
+<h1 class="head22" align="center">Reviewed Customers</h1>
 
-<table class="table table-dark" >
+<table class="table table-striped" >
   <tr>
     <td>Num</td>
-    <td>Email</td>
-    <td>First Name</td>
-    <td>Last Name</td>
-    <td>Address</td>
-    <td>Country</td>
-    <td>Zip_Code</td>
-    <td>Phone No</td>
+    <td>Customer Email</td>
+    <td>Customer Name</td>
+    <td>Reviewed Customer Name</td>
+    <td>Product ID</td>
+    <td>Given Rating</td>
   </tr>
 <?php
 		
@@ -29,7 +27,8 @@ if(!isset($_SESSION["admin"]))
 			die("Cannot connect to DB server");	
 		}
 				  
-				  $sql ="SELECT * FROM `customer` ";
+				  $sql ="SELECT C_Email,C_fname,C_lname,C_Name,P_ID,P_Rating FROM `e_com_db`.`customer`, `e_com_db`.`productreview` 
+          WHERE `C_fname` = `C_Name`";
 				  
 					
 		$result = mysqli_query($con,$sql);
@@ -44,12 +43,10 @@ if(!isset($_SESSION["admin"]))
                 <tr>
                   <td class="counterCell"></td>
                   <td><?php echo $row['C_Email'] ?></td>
-                  <td><?php echo $row['C_fname'] ?></td>
-                  <td><?php echo $row['C_lname'] ?></td>
-                  <td><?php echo $row['C_Address'] ?></td>
-                  <td><?php echo $row['C_Country'] ?></td>
-                  <td><?php echo $row['C_ZipCode'] ?></td>
-                  <td><?php echo $row['C_Phone'] ?></td>
+                  <td><?php echo $row['C_fname'],"\n",$row['C_lname'] ?></td>
+                  <td><?php echo $row['C_Name'] ?></td>
+                  <td><?php echo $row['P_ID'] ?></td>
+                  <td><?php echo $row['P_Rating'] ?></td>
                 </tr>
 
         <?php

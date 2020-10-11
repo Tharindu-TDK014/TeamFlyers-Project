@@ -16,10 +16,11 @@ if(!isset($_SESSION["admin"]))
     <td>Num</td>
     <td>Review ID</td>
     <td>Product ID</td>
-    <td>Customer Email</td>
+    <td>Customer Name</td>
     <td>Review Date</td>
     <td>Product Review</td>
     <td>Product Rating</td>
+    <td>View Customer</td>
   </tr>
 <?php
 		
@@ -30,6 +31,7 @@ if(!isset($_SESSION["admin"]))
 		}
 				  
 				  $sql ="SELECT * FROM `productreview` ";
+          //$query = "SELECT * FROM `e_com_db`.`customer`, `e_com_db`.`productreview`  WHERE `C_fname` = 'C_Name'"
 				  
 					
 		$result = mysqli_query($con,$sql);
@@ -45,10 +47,11 @@ if(!isset($_SESSION["admin"]))
                   <td class="counterCell"></td>
                   <td><?php echo $row['Review_ID'] ?></td>
                   <td><?php echo $row['P_ID'] ?></td>
-                  <td><?php echo $row['C_Email'] ?></td>
+                  <td><?php echo $row['C_Name'] ?></td>
                   <td><?php echo $row['Review_Date'] ?></td>
                   <td><?php echo $row['P_Review'] ?></td>
                   <td><?php echo $row['P_Rating'] ?></td>
+                  <td><a class="btn btn-primary" href="ViewReviwCustomer.php" role="button">View</a></td>
                 </tr>
 
         <?php

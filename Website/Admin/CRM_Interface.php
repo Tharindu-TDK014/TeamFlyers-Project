@@ -16,7 +16,11 @@ if(!isset($_SESSION["admin"]))
 	
 	<div class="row">	
 		<div class="col-2" >
-            <H2 class="head2"><?php display_greeting() ?></H2>
+      <div class="card" style="width: 12rem; height:37.5rem; background:#09A841">
+        <div class="card-body">
+          <H2 class="head2"><?php display_greeting() ?></H2>
+        </div>
+      </div>
         </div>
 		<div class="col-6" >
             <img src="Images/crm-trends-header.png" alt="" style="width: 800px; height: 600px;">

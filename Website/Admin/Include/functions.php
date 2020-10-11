@@ -13,7 +13,7 @@ function display_greeting() {
 		echo "Good Evening Admin !";
 	}
 
-	echo "\n The time is " . date("h:00:a");
+	echo "\n The time is " . date("h:i:a");
 }
 
 ?>

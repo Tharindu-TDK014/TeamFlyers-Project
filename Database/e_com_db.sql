@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 10, 2020 at 03:40 PM
+-- Generation Time: Oct 11, 2020 at 08:33 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -124,21 +124,20 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `C_Country` varchar(100) NOT NULL,
   `C_ZipCode` varchar(20) NOT NULL,
   `C_Phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `C_LoyaltyPoints` int(11) NOT NULL,
   PRIMARY KEY (`C_Email`),
-  KEY `C_LoyaltyPoints` (`C_LoyaltyPoints`)
+  KEY `C_fname` (`C_fname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`C_Email`, `C_password`, `C_fname`, `C_lname`, `C_Address`, `C_Country`, `C_ZipCode`, `C_Phone`, `C_LoyaltyPoints`) VALUES
-('idnipunmadhushan@gmail.com ', 'nipun123', 'Nipun', 'Madushan', 'Russia,Moscow', 'Russia', '400-2', '0751234567', 1),
-('nileshshermal007@gmail.com ', 'shermal123', 'Shermal', 'Nilesh', 'Canada,Toronto', 'Canada', '300-4', '0745566784', 1),
-('ravindursm1@gmail.com', 'ravindu123', 'Ravindu', 'Sathsara', 'UK,Edinburgh', 'UK', '500-1', '0719089744', 1),
-('sanojan11@gmail.com', 'anojan123', 'Anojan', 'Sivaranjan', 'Switzerland,Geneva', 'Switzerland', '800-2', '0765588776', 1),
-('tharindudk7714@gmail.com', 'tharindu12', 'Tharindu', 'Dananjaya', 'USA,Kansas', 'USA', '202-3', '0764477441', 1);
+INSERT INTO `customer` (`C_Email`, `C_password`, `C_fname`, `C_lname`, `C_Address`, `C_Country`, `C_ZipCode`, `C_Phone`) VALUES
+('idnipunmadhushan@gmail.com ', 'nipun123', 'Nipun', 'Madushan', 'Russia,Moscow', 'Russia', '400-2', '0751234567'),
+('nileshshermal007@gmail.com ', 'shermal123', 'Shermal', 'Nilesh', 'Canada,Toronto', 'Canada', '300-4', '0745566784'),
+('ravindursm1@gmail.com', 'ravindu123', 'Ravindu', 'Sathsara', 'UK,Edinburgh', 'UK', '500-1', '0719089744'),
+('sanojan11@gmail.com', 'anojan123', 'Anojan', 'Sivaranjan', 'Switzerland,Geneva', 'Switzerland', '800-2', '0765588776'),
+('tharindudk7714@gmail.com', 'tharindu12', 'Tharindu', 'Dananjaya', 'USA,Kansas', 'USA', '202-3', '0764477441');
 
 -- --------------------------------------------------------
 
@@ -288,26 +287,26 @@ CREATE TABLE IF NOT EXISTS `productreview` (
   `Review_ID` int(11) NOT NULL AUTO_INCREMENT,
   `P_ID` int(11) NOT NULL,
   `P_Name` varchar(100) NOT NULL,
-  `C_Email` varchar(100) NOT NULL,
+  `C_Name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Review_Date` date NOT NULL,
   `P_Review` varchar(200) NOT NULL,
   `P_Rating` int(11) NOT NULL,
   PRIMARY KEY (`Review_ID`),
   KEY `P_ID` (`P_ID`),
-  KEY `C_Email` (`C_Email`),
-  KEY `P_Name` (`P_Name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `P_Name` (`P_Name`),
+  KEY `C_Name` (`C_Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `productreview`
 --
 
-INSERT INTO `productreview` (`Review_ID`, `P_ID`, `P_Name`, `C_Email`, `Review_Date`, `P_Review`, `P_Rating`) VALUES
-(1, 1, 'NSE Cinnamon oil', 'idnipunmadhushan@gmail.com ', '2020-10-01', 'Good Quality best Product from Ceylon', 10),
-(2, 1, 'NSE Cinnamon Oil', 'nileshshermal007@gmail.com ', '2020-10-02', 'Good', 6),
-(3, 1, 'NSE Cinnamon oil', 'ravindursm1@gmail.com', '2020-10-03', 'Excellent products', 10),
-(4, 2, 'NSE Cinnamon Bark', 'sanojan11@gmail.com', '2020-10-04', 'Seems good to me', 7),
-(5, 2, 'NSE Cinnamon Bark', 'tharindudk7714@gmail.com', '2020-10-05', 'Quality is good', 8);
+INSERT INTO `productreview` (`Review_ID`, `P_ID`, `P_Name`, `C_Name`, `Review_Date`, `P_Review`, `P_Rating`) VALUES
+(1, 1, 'NSE Cinnamon oil', 'Nipun', '2020-10-01', 'Good Quality best Products from Ceylon', 10),
+(2, 1, 'NSE Cinnamon Oil', 'Shermal', '2020-10-02', 'Good', 6),
+(3, 1, 'NSE Cinnamon oil', 'Ravindu', '2020-10-03', 'Excellent products from Sri Lanka', 10),
+(4, 2, 'NSE Cinnamon Bark', 'Anojan', '2020-10-04', 'Seems good to me', 7),
+(5, 2, 'NSE Cinnamon Bark', 'Tharindu', '2020-10-05', 'Quality is good', 8);
 
 -- --------------------------------------------------------
 
@@ -429,7 +428,7 @@ ALTER TABLE `product`
 ALTER TABLE `productreview`
   ADD CONSTRAINT `productreview_ibfk_1` FOREIGN KEY (`P_ID`) REFERENCES `product` (`P_ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `productreview_ibfk_2` FOREIGN KEY (`P_Name`) REFERENCES `product` (`P_Name`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `productreview_ibfk_3` FOREIGN KEY (`C_Email`) REFERENCES `customer` (`C_Email`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `productreview_ibfk_3` FOREIGN KEY (`C_Name`) REFERENCES `customer` (`C_fname`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `shipment`
