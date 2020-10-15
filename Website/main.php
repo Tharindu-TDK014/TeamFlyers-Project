@@ -18,6 +18,7 @@
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <a class="navbar-brand" href="#">Nipun Spice Export</a>
+		
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -99,7 +100,7 @@
 <div class="container-promotion">
 	<h2> Promotions </h2>
 	<?php
-		$con = mysqli_connect("localhost: 3308","root","","nse_e_com");
+		$con = mysqli_connect("localhost","root","","nse_e_com");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		
@@ -114,7 +115,7 @@
 			while($row = mysqli_fetch_assoc($result))
 			{
 				?>
-	<form method="post" action="">
+	
 	
 	<div class="col-md-3">
 			<div class="product-top">
@@ -131,7 +132,7 @@
 		</div>
 		</div>
 			
-	</form>
+
 		
      	
     
@@ -150,7 +151,7 @@
 	<!-- Displaying all the products-->
 	<div class="product-container">
 	<?php
-		$con = mysqli_connect("localhost: 3308","root","","nse_e_com");
+		$con = mysqli_connect("localhost","root","","nse_e_com");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		
@@ -180,17 +181,17 @@
 		<div class="product-bottom text-center">
 		<h3> <?php echo $row["P_Name"]; ?></h3>
 		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
-		<form action="addtocart.php" method="post">
+		
             <input type="number" name="quantity" value="1" min="1" max="" placeholder="Quantity" required>
             <input type="hidden" name="product_id" value="">
             <input type="submit" value="Add To Cart">
-        </form>
+       
 			
 		</div>
 	</div>
 		
 
-     	
+    </form>  	
     
 	 
 	
