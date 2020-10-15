@@ -1,3 +1,7 @@
+<?php
+	$con = mysqli_connect("localhost","root","","nse_e_com");
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,24 +103,16 @@
 <form method="post" action="">
 <div class="container-promotion">
 	<h2> Promotions </h2>
+	
 	<?php
-		$con = mysqli_connect("localhost","root","","nse_e_com");
-		if(!$con)
-			{	
-				die("Cannot connect to the DB");		
-			}
-		 //retrieving values from sql
-			$sql ="SELECT * FROM `product` WHERE `P_Offers`='1'";	
-					
+		$sql = "SELECT * FROM `product` WHERE `P_Offers`='1'";
 		$result = mysqli_query($con,$sql);
 			
 		if(mysqli_num_rows($result)> 0)
-	{
-			while($row = mysqli_fetch_assoc($result))
+		{
+			while($row = mysqli_fetch_array($result))
 			{
 				?>
-	
-	
 	<div class="col-md-3">
 			<div class="product-top">
 			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
@@ -131,12 +127,6 @@
 		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
 		</div>
 		</div>
-			
-
-		
-     	
-    
-	
 	
 	
 	<?php
@@ -144,6 +134,7 @@
 	}
 	
 	?>
+	
 	</div>
 	</div>
 	
@@ -151,13 +142,8 @@
 	<!-- Displaying all the products-->
 	<div class="product-container">
 	<?php
-		$con = mysqli_connect("localhost","root","","nse_e_com");
-		if(!$con)
-			{	
-				die("Cannot connect to the DB");		
-			}
-		 //retrieving values from sql
-			$sql ="SELECT * FROM `product` ";	
+		
+		$sql ="SELECT * FROM `product` ";	
 					
 		$result = mysqli_query($con,$sql);
 			
