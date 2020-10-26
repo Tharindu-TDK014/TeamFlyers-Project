@@ -7,6 +7,21 @@
 	font-family: "duru-sans";
 }
 
+.txtsearch{
+	width: 23vw;
+	height: 5vh;
+	border: solid #F19820;
+	border-radius: 0 0 0 60px;
+}
+.btsearch{
+	width: 12vw;
+	height: 5vh;
+	border: solid #F19820;
+	border-radius: 0 60px 0 0;
+	padding: 10px;
+	text-align: center;
+	background: #F19820;
+}
 .container{
 	padding: 10px;
 }
@@ -45,6 +60,8 @@
 	position: absolute;
 	justify-content: center;
 	margin: auto;
+	padding-bottom: 10px;
+	margin-bottom: 100px;
 }
 .col-md-3{
 	
@@ -104,5 +121,55 @@ img{
 .product-bottom h5{
 	font-size: 15px;
 	padding-bottom: 10px;
+}
+
+
+/*footer*/
+
+.footer{
+	
+	background: #262626;
+	color: #fff;
+	
+}
+
+.socialmedia-list{
+	margin-top: 20px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	background: #000;
+}
+
+.socialmedia-list li a i{
+	color: #fff;
+	padding: 8px;
+}
+
+.single-footer h3{
+	font-weight: 500;
+	margin-bottom: 25px;
+	color: #fafafa;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
+
+.link-area{
+	padding: 0;
+}
+
+.link-area li{
+	padding: 5px 5px 5px 0;
+	list-style: none;
+	color: #ddd;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
+
+.link-area li a i{
+	margin-right: 10px;
+	color: #ddd;
+}
+
+.single-footer p{
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 }
 

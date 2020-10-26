@@ -48,6 +48,15 @@
 
 	
 	<div class="navigation-bar">
+		<?php
+		session_start();
+		echo "Hello" .$_SESSION["userName"];
+		?>
+		<form action="" method="get" id="searchForm">
+			<input type="text" name="search" id="searchBox" class="txtsearch" value="search"/>
+			<input type="button" class="btsearch" value="Search">
+		</form>
+		
 	</div>
 	
 <div class="container">
@@ -136,10 +145,11 @@
 	?>
 	
 	</div>
-	</div>
+	
 	
 	
 	<!-- Displaying all the products-->
+	
 	<div class="product-container">
 	<?php
 		
@@ -177,7 +187,7 @@
 	</div>
 		
 
-    </form>  	
+     	
     
 	 
 	
@@ -190,7 +200,39 @@
 	
 	
 	</div>
-	
+		</form>
+	</div>
+	<div class="footer">
+		
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+				<div class="single-footer">
+					<h3>About Us</h3>
+					<p>bla bla bla nipun bla bla bla nipun bla</p>
+				</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="single-footer">
+					<h3>Contact Us</h3>
+						<ul class="link-area">
+							<li><i class="fa fa-phone">+94757170784</i></li>
+							<li><i class="fa fa-envelope-o">nipun@nipunspice.lk</i></li>
+							<li><i class="fa fa-map">nipun state, Dakunu Rata</i></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<ul class="socialmedia-list">
+						<li><a href=""><i class="fa fa-facebook"</a></li>
+						<li><a href=""><i class="fa fa-instagram"</a></li>
+						<li><a href=""><i class="fa fa-youtube"</a></li>
+					</ul>
+				</div>
+				</div>
+				
+	</div>
+
+		
 
 
 </body>
