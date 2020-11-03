@@ -18,7 +18,7 @@ if(!isset($_SESSION["admin"]))
 		<div class="col-2" >
       <div class="card" style="width: 12rem; height:37.5rem; background:#09A841">
         <div class="card-body">
-          <H2 class="head2"><?php display_greeting() ?></H2>
+          <H2 style="color:#000000; font-style:italic; font-family: fantasy;"><?php display_greeting() ?></H2>
         </div>
       </div>
         </div>
