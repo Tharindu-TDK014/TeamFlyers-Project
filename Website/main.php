@@ -18,9 +18,13 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<!--light-slider.css-->
+	<link rel="stylesheet" type="text/css" href="css/lightslider.css">
+	<!--Jquery-------------------->
+<script type="text/javascript" src="js/Jquery.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-fixed-top">
   <a class="navbar-brand" href="#">Nipun Spice Export</a>
 		
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,10 +52,7 @@
 
 	
 	<div class="navigation-bar">
-		<?php
-		session_start();
-		echo "Hello" .$_SESSION["userName"];
-		?>
+		
 		<form action="" method="get" id="searchForm">
 			<input type="text" name="search" id="searchBox" class="txtsearch" value="search"/>
 			<input type="button" class="btsearch" value="Search">
@@ -109,7 +110,7 @@
     </a>
   </div>
 
-<form method="post" action="">
+
 <div class="container-promotion">
 	<h2> Promotions </h2>
 	
@@ -122,7 +123,12 @@
 			while($row = mysqli_fetch_array($result))
 			{
 				?>
+	<section class="slider">
 	<div class="col-md-3">
+	
+		<ul id="autoWidth" class="cs-hidden">
+		<li class="item-a">
+
 			<div class="product-top">
 			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
 			<div class="overlay">
@@ -131,11 +137,16 @@
 				</a>
 				</div>
 				</div>
-		<div class="product-bottom text-center">
-		<h3> <?php echo $row["P_Name"]; ?> </h3>
-		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
-		</div>
-		</div>
+			<div class="product-bottom text-center">
+			<h3> <?php echo $row["P_Name"]; ?> </h3>
+			<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
+			</div>
+			
+		</li>
+		</ul>
+		
+			</div>
+		</section>
 	
 	
 	<?php
@@ -145,7 +156,7 @@
 	?>
 	
 	</div>
-	
+	</div>
 	
 	
 	<!-- Displaying all the products-->
@@ -165,7 +176,7 @@
 	
 	
 		
-			<div class="col-md-3">
+			<div class="col-md-3ss">
 			<div class="product-top">
 			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
 			<div class="overlay">
@@ -200,8 +211,11 @@
 	
 	
 	</div>
-		</form>
-	</div>
+		
+	
+	
+		
+		
 	<div class="footer">
 		
 			<div class="row">
@@ -216,24 +230,28 @@
 					<h3>Contact Us</h3>
 						<ul class="link-area">
 							<li><i class="fa fa-phone">+94757170784</i></li>
-							<li><i class="fa fa-envelope-o">nipun@nipunspice.lk</i></li>
+							<li><i class="fa fa-envelope">nipun@nipunspice.lk</i></li>
 							<li><i class="fa fa-map">nipun state, Dakunu Rata</i></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
+					<div class="single-footer">     
+					<h3> Follow us on</h3>
 					<ul class="socialmedia-list">
-						<li><a href=""><i class="fa fa-facebook"</a></li>
-						<li><a href=""><i class="fa fa-instagram"</a></li>
-						<li><a href=""><i class="fa fa-youtube"</a></li>
+						<li><a href=""><i class="fa fa-facebook"></i></a></li>
+						<li><a href=""><i class="fa fa-instagram"></i></a></li>
+						<li><a href=""><i class="fa fa-youtube"></i></a></li>
 					</ul>
+					</div>
 				</div>
 				</div>
 				
 	</div>
 
 		
-
+<!--script-link----------->
+<script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
