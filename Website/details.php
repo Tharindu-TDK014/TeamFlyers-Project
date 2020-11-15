@@ -38,12 +38,7 @@
 		<span class="price">
             &dollar;<?php echo $row["P_Price"]; ?>
         </span>
-        <br>
-            <input type="number" name="txt_quantity" value="1" min="1" max="" placeholder="Quantity" required><br>
-            <input type="hidden" name="txt_productid" value="<?php echo $row['P_ID']?> ">
-			<input type="hidden" name="txt_productname" value="<?php echo $row['P_Name']?> ">
-			<input type="hidden" name="txt_productprice" value="<?php echo $row['P_Price']?> ">
-            <input type="submit" value="Add To Cart">
+                 
       
 		<h3>Description</h3>
         <div class="description">
@@ -81,7 +76,15 @@
 				}
 			?>
 		</div>
+		
+		<div class="comment">
+			<textarea cols="75" rows="5" name="txtcmnt"></textarea>
+			
+		</div>
+		
+		<input type="submit" name="btnsubmit">
 		 </div>
+		
 		
 		
 	<?php
@@ -89,6 +92,7 @@
 	}
 	
 	?>
+		
     
 </div>
 		 </form>
