@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Products</title>
+<title>Stock</title>
 	<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,9 +16,11 @@
 
 <body>
 	<div id="header">
-		<h2 style="color:#FFFFFF;">Hi Admin- Customer Details</h2>
+		<h2 style="color:#FFFFFF;">Hi Admin- Stock Details</h2>
+		<a href="Insert_Stock.php"> <button type="button" class="btn btn-success"> Add Stock </button></a>
 		<a href=""  class="btn btn-danger"> Log Out</a>
 	</div>
+	
 <div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
         <a href="Admin_Product.php" class="btn badge"><h5>Product Details</h5></a><br><br>
@@ -27,18 +29,18 @@
         <a href="Admin_Promotions.php" class="btn badge"><h5>Promotions</h5></a><br><br>
         <a href="Admin_reports.php" class="btn badge"><h5>Reports</h5></a><br><br>
     </div>
-	
 	<div id="Section">
-	<table width="100%" class="table" align="center" >
+	<table width="100%" class="table" >
               <thead>
                 <tr>
-				<th>Email</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-				  <th>Address</th>
-				  <th>Country</th>
-				  <th>Zip Code</th>
-                  <th>Phone</th>
+				<th>Stock ID</th>
+                  <th>P ID</th>
+                  <th>P Type</th>
+				  <th>Stock Arrived Date</th>
+				  <th>Stock Exp Date</th>
+				  <th>Stock Quantity</th>
+					<th>Status</th>
+                 
                 </tr>
               </thead>
               <tbody>
@@ -50,7 +52,7 @@
 			die("Cannot connect to DB server");	
 		}
 				  
-				  $sql ="SELECT * FROM `customer` ";
+				  $sql ="SELECT * FROM `stock` ";
 				  
 					
 		$result = mysqli_query($con,$sql);
@@ -60,18 +62,23 @@
 			while($row = mysqli_fetch_assoc($result))
 			{
 			
-		?>
+	?>
 				  
                 <tr align="center">
-				<td><?php echo $row['C_Email'] ?></td>
-				 <td><?php echo $row['C_fname'] ?></td>
-                 <td><?php echo $row['C_lname'] ?></td>
-				<td><?php echo $row['C_Address'] ?></td>
-				<td><?php echo $row['C_Country'] ?></td>
-				<td><?php echo $row['C_ZipCode'] ?></td>
-				 <td><?php echo $row['C_Phone'] ?></td>
+				<td><?php echo $row['Stock_ID'] ?></td>
+				<td><?php echo $row['P_ID'] ?></td>
+                <td><?php echo $row['P_Type'] ?></td>
+				<td><?php echo $row['Stock_Arrive_Date'] ?></td>
+				<td><?php echo $row['Stock_Exp_Date'] ?></td>
+				<td><?php echo $row['Stock_Qty'] ?></td>
+				 <td><?php echo $row['P_Status'] ?></td>	 
 				 <td>
-       			</td>
+	
+				<a  href="Edit_Stock.php?id=<?php echo $row['Stock_ID']; ?>" title="click for delete" onclick="return confirm('Edit Stock?')" class="btn btn-danger">Edit or Remove</a> 
+			
+                 
+				
+                  </td>
                 </tr>
                
         <?php
