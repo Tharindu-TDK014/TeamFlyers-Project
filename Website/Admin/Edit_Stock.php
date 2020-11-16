@@ -77,7 +77,7 @@
             </tr>
             </table> 
             <br>
-            <p style="margin-left:25px;"><input type="checkbox" <?php if($row['P_Status'] == 1){  echo "checked='checked'"; }?> name="chkPublish"> Out of Stock</p>    
+            <p style="margin-left:25px;"><input type="checkbox" <?php if($row['P_Status'] == 1){  echo "checked='checked'"; }?> name="chkPublish"> In Stock</p>    
 
       <?php   	
 	 mysqli_close($con);

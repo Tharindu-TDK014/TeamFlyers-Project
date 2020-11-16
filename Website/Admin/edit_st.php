@@ -20,7 +20,7 @@
 		die("Cannot connect to DB server");		
 	}
 	
-	$sql="UPDATE `stock` SET `P_ID` = '".$pid."', `P_Type` = '".$ptype."', `Stock_Arrive_Date` = '".$sad."', `Stock_Exp_Date` = '".$sxd."', `Stock_Qty` = '".$sq."', `P_Status` = '".$status."' WHERE `stock`.`Stock_ID` = '".$Sid."' AND `stock`.`P_ID` = '".$pid."' AND `stock`.`P_Type` = '".$ptype."' AND `stock`.`Stock_Qty` = '".$sq."' AND `stock`.`P_Status` = '".$status."';";	
+	$sql="UPDATE `stock` SET `P_ID` = '".$pid."', `P_Type` = '".$ptype."', `P_Status` = '".$status."', `Stock_Qty` = '".$sq."', `Stock_Arrive_Date` = '".$sad."', `Stock_Exp_Date` = '".$sxd."' WHERE `stock`.`Stock_ID` = '".$Sid."';";	
 	 
 	 if(mysqli_query($con,$sql))
 	 {

@@ -117,7 +117,7 @@
 	  
       <button type="submit" name="btnsubmit"  class="btn btn-success" style="margin-left:25px;">Edit  </button>
 		  
-	<button type="button" name="btn1"  class="btn badge-primary" style="margin-left:25px;" onClick="Cal()">Calculate </button>
+	<button type="button" name="btn1"  class="btn btn-primary" style="margin-left:10px;" onClick="Cal()">Calculate </button>
       </div>
       </form>
 <script type="text/javascript">
