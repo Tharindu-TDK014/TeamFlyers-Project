@@ -16,9 +16,10 @@
 
 <body>
 	<div id="header">
-		<h2 style="color:#FFFFFF;">Hi Admin- Customer Details</h2>
+		<h2 style="color:#FFFFFF;">Hi Admin- Orders</h2>
 		<a href=""  class="btn btn-danger"> Log Out</a>
 	</div>
+	
 <div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
         <a href="Admin_Product.php" class="btn badge"><h5>Product Details</h5></a><br><br>
@@ -29,16 +30,19 @@
     </div>
 	
 	<div id="Section">
-	<table width="100%" class="table" align="center" >
-              <thead>
+	<table width="100%" class="table" >
+              <thead align="center">
                 <tr>
-				<th>Email</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-				  <th>Address</th>
-				  <th>Country</th>
-				  <th>Zip Code</th>
-                  <th>Phone</th>
+				<th>Order ID</th>
+                <th>Email</th>
+				<th>Cart ID</th>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Country</th>
+                <th>State</th>
+				<th>Zip Code</th>
+				<th>Date</th>
+				<th>Amount</th>
                 </tr>
               </thead>
               <tbody>
@@ -50,7 +54,7 @@
 			die("Cannot connect to DB server");	
 		}
 				  
-				  $sql ="SELECT * FROM `customer` ";
+				  $sql ="SELECT * FROM `cus_order` ";
 				  
 					
 		$result = mysqli_query($con,$sql);
@@ -60,18 +64,20 @@
 			while($row = mysqli_fetch_assoc($result))
 			{
 			
-		?>
+	?>
 				  
                 <tr align="center">
-				<td><?php echo $row['C_Email'] ?></td>
-				 <td><?php echo $row['C_fname'] ?></td>
-                 <td><?php echo $row['C_lname'] ?></td>
-				<td><?php echo $row['C_Address'] ?></td>
-				<td><?php echo $row['C_Country'] ?></td>
-				<td><?php echo $row['C_ZipCode'] ?></td>
-				 <td><?php echo $row['C_Phone'] ?></td>
-				 <td>
-       			</td>
+				<td><?php echo $row['Order_ID'] ?></td>
+                <td><?php echo $row['C_Email'] ?></td>
+                <td><?php echo $row['Cart_ID'] ?></td>
+                <td><?php echo $row['C_Name'] ?></td>
+                <td><?php echo $row['To_Address'] ?></td>
+                <td><?php echo $row['To_Country'] ?></td>
+                <td><?php echo $row['To_State'] ?></td>
+                <td><?php echo $row['To_ZipCode'] ?></td>
+                <td><?php echo $row['Order_Date'] ?></td> 
+				<td><?php echo $row['Cart_Total_Amt'] ?></td>
+
                 </tr>
                
         <?php

@@ -16,9 +16,11 @@
 
 <body>
 	<div id="header">
-		<h2 style="color:#FFFFFF;">Hi Admin- Customer Details</h2>
+		<h2 style="color:#FFFFFF;">Hi Admin- Product Details</h2>
+		<a href="Insert_Products.php"> <button type="button" class="btn btn-success"> Add Products </button></a>
 		<a href=""  class="btn btn-danger"> Log Out</a>
 	</div>
+	
 <div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
         <a href="Admin_Product.php" class="btn badge"><h5>Product Details</h5></a><br><br>
@@ -29,16 +31,21 @@
     </div>
 	
 	<div id="Section">
-	<table width="100%" class="table" align="center" >
+	<table width="100%" class="table">
               <thead>
                 <tr>
-				<th>Email</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-				  <th>Address</th>
-				  <th>Country</th>
-				  <th>Zip Code</th>
-                  <th>Phone</th>
+				<th width="5px">P_ID</th>
+                <th width="5px">S_ID</th>
+                <th>Image</th>
+                <th width="20px">Qty</th>
+				<th width="80px">Name</th>
+				<th width="50px">Type</th>
+				<th width="180px">Description</th>
+                <th width="100px">Price</th>
+                <th width="100px">Offer Price</th>
+                <th width="100px">Man Date</th>
+					<th width="100px">Exp Date</th>
+                 
                 </tr>
               </thead>
               <tbody>
@@ -50,7 +57,7 @@
 			die("Cannot connect to DB server");	
 		}
 				  
-				  $sql ="SELECT * FROM `customer` ";
+				  $sql ="SELECT * FROM `product` ";
 				  
 					
 		$result = mysqli_query($con,$sql);
@@ -60,18 +67,28 @@
 			while($row = mysqli_fetch_assoc($result))
 			{
 			
-		?>
+	?>
 				  
                 <tr align="center">
-				<td><?php echo $row['C_Email'] ?></td>
-				 <td><?php echo $row['C_fname'] ?></td>
-                 <td><?php echo $row['C_lname'] ?></td>
-				<td><?php echo $row['C_Address'] ?></td>
-				<td><?php echo $row['C_Country'] ?></td>
-				<td><?php echo $row['C_ZipCode'] ?></td>
-				 <td><?php echo $row['C_Phone'] ?></td>
+				<td><?php echo $row['P_ID'] ?></td>
+                <td><?php echo $row['Stock_ID'] ?></td>
+                  <td>
+				 <img src="<?php echo $row['P_filepath']?>" class="img-circle" width="50" height="50"> 
+				 </td>
+                 <td><?php echo $row['P_Qty'] ?></td>
+				<td><?php echo $row['P_Name'] ?></td>
+				<td><?php echo $row['P_Type'] ?></td>
+				<td><?php echo $row['P_Description'] ?></td>
+				 <td>Rs <?php echo $row['P_Price'] ?></td>
+				 <td>Rs<?php echo $row['P_OfferPrice'] ?></td>
+                 <td><?php echo $row['P_ManDate'] ?></td>
+                 <td><?php echo $row['P_ExpDate'] ?></td>
+				 
 				 <td>
-       			</td>
+				
+				 
+				<a  href="Edit_Product.php?id=<?php echo $row['P_ID']; ?>" title="click for edit" onclick="return confirm('Are you sure edit this item?')" class="btn btn-primary">Edit</a> 
+          </td>
                 </tr>
                
         <?php

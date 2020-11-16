@@ -16,9 +16,10 @@
 
 <body>
 	<div id="header">
-		<h2 style="color:#FFFFFF;">Hi Admin- Customer Details</h2>
+		<h2 style="color:#FFFFFF;">Hi Admin- Promotions</h2>
 		<a href=""  class="btn btn-danger"> Log Out</a>
 	</div>
+	
 <div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
         <a href="Admin_Product.php" class="btn badge"><h5>Product Details</h5></a><br><br>
@@ -29,16 +30,16 @@
     </div>
 	
 	<div id="Section">
-	<table width="100%" class="table" align="center" >
+	<table width="100%" class="table" >
               <thead>
                 <tr>
-				<th>Email</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-				  <th>Address</th>
-				  <th>Country</th>
-				  <th>Zip Code</th>
-                  <th>Phone</th>
+				<th>P ID</th>
+				<th>Stock ID</th>
+				<th>Name</th>
+                <th>Price</th>
+				<th>Offer</th>
+				<th>Offer Price</th>
+				<th>Offer Status</th>  
                 </tr>
               </thead>
               <tbody>
@@ -50,7 +51,7 @@
 			die("Cannot connect to DB server");	
 		}
 				  
-				  $sql ="SELECT * FROM `customer` ";
+				  $sql ="SELECT * FROM `product` ";
 				  
 					
 		$result = mysqli_query($con,$sql);
@@ -60,18 +61,23 @@
 			while($row = mysqli_fetch_assoc($result))
 			{
 			
-		?>
+	?>
 				  
                 <tr align="center">
-				<td><?php echo $row['C_Email'] ?></td>
-				 <td><?php echo $row['C_fname'] ?></td>
-                 <td><?php echo $row['C_lname'] ?></td>
-				<td><?php echo $row['C_Address'] ?></td>
-				<td><?php echo $row['C_Country'] ?></td>
-				<td><?php echo $row['C_ZipCode'] ?></td>
-				 <td><?php echo $row['C_Phone'] ?></td>
+				<td><?php echo $row['P_ID'] ?></td>
+				<td><?php echo $row['Stock_ID'] ?></td>
+				<td><?php echo $row['P_Name'] ?></td>
+				 <td>Rs <?php echo $row['P_Price'] ?></td>
+				 <td><?php echo $row['P_Offers'] ?>%</td>
+				 <td>Rs<?php echo $row['P_OfferPrice'] ?></td>
+				<td><?php echo $row['P_OfferStatus'] ?></td>
+				 
 				 <td>
-       			</td>
+				
+				 
+				<a  href="Set_Offer.php?id=<?php echo $row['P_ID']; ?>" title="click for edit" onclick="return confirm('Set an offer on this item?')" class="btn btn-primary">Set Offer</a> 
+		
+                  </td>
                 </tr>
                
         <?php
