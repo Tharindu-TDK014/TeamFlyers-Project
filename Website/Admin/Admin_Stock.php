@@ -46,7 +46,7 @@
               <tbody>
 			 <?php
 		
-		 $con = mysqli_connect("localhost: 3308","root","","nse");
+		 $con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
 		{	
 			die("Cannot connect to DB server");	

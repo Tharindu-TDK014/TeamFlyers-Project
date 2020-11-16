@@ -100,7 +100,7 @@
 		move_uploaded_file($_FILES["file"]["tmp_name"],$image);
 			
 		/* connecting to database */ 
-		$con = mysqli_connect("localhost: 3308","root","","nse");
+		$con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
 			{	
 				die("Cannot upload the file, Please choose another file");		
