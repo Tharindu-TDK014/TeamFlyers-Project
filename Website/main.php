@@ -1,5 +1,5 @@
 <?php
-	$con = mysqli_connect("localhost","root","","nse_e_com");
+	$con = mysqli_connect("localhost","root","","e_com_db");
 	
 ?>
 <!DOCTYPE html>
@@ -108,7 +108,8 @@
 	<?php
 		$sql = "SELECT * FROM `product` WHERE `P_Offers`='1'";
 		$result = mysqli_query($con,$sql);
-			
+		
+		
 		if(mysqli_num_rows($result)> 0)
 		{
 			while($row = mysqli_fetch_array($result))
@@ -125,13 +126,17 @@
 				</div>
 		<div class="product-bottom text-center">
 		<h3> <?php echo $row["P_Name"]; ?> </h3>
-		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
+		<strike><h5>Rs: <?php echo $row["P_Price"]; ?></h5></strike>
+		<h5>Rs: <?php echo $row["P_OfferPrice"]; ?>
 		</div>
 		</div>
 	
 	
 	<?php
 			}
+	}
+	else{
+		echo'<span style="color:#fff;text-align:center;">No promotions available at the moment</span>';
 	}
 	
 	?>
@@ -165,6 +170,7 @@
 	
 		
 			<div class="col-md-3ss">
+			
 			<div class="product-top">
 			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
 			<div class="overlay">
