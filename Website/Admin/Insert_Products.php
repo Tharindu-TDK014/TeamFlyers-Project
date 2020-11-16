@@ -96,7 +96,7 @@
 		$pprice = $_POST["txt6"];
 		$md = $_POST["txt7"];
 		$ed = $_POST["txt8"];
-		$image = "uploads/".basename($_FILES["file"]["name"]);
+		$image = "Images/".basename($_FILES["file"]["name"]);
 		move_uploaded_file($_FILES["file"]["tmp_name"],$image);
 			
 		/* connecting to database */ 

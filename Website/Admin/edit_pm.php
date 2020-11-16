@@ -23,7 +23,7 @@
 	
 	if(is_uploaded_file($_FILES['file']['tmp_name']))
 	{
-   		$image = "uploads/".basename($_FILES["file"]["name"]);
+   		$image = "Images/".basename($_FILES["file"]["name"]);
 		move_uploaded_file($_FILES["file"]["tmp_name"],$image);
 	}  
 	else
