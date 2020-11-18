@@ -182,10 +182,15 @@
 		<div class="product-bottom text-center">
 		<h3> <?php echo $row["P_Name"]; ?></h3>
 		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
-		
-            <input type="number" name="quantity" value="1" min="1" max="" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="">
-            <input type="submit" value="Add To Cart">
+		<!-- nip -->
+           
+            <form action="cart.php" method="post">
+<td><input type="hidden" name="product_id" value=""></td>
+<input type="number" name="quantity" value="1" min="1" max="" placeholder="Quantity" required>
+<td>
+<div><input type="submit" name="submit" value="add to cart" /></div>
+</td>
+</form>
        
 			
 		</div>
