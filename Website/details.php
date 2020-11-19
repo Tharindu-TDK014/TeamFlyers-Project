@@ -14,7 +14,7 @@ if(!isset($_SESSION["userName"]))
 
 <body>
 	
-	<form id="addtocart" name="addtocart" action="addtocart.php" method="post">
+	
 	<div class="content-wrapper">
 		 <?php
 		
@@ -86,7 +86,7 @@ if(!isset($_SESSION["userName"]))
 		</div>
 		
 		<h3> Comment</h3>
-		<form id="addcmnt" name="formdetails" method="post" action="addComment">
+		<form id="addcmnt" name="formdetails" method="post" action="addComment.php">
 		<textarea name="txtComment" required class="text"></textarea>
 		
 		<input type="submit" name="btnsubmit" value="Comment">

@@ -81,22 +81,16 @@
 			<input type="radio" name="rdotype" value="Complain" id="rdotype_1" />
           Complain
           
-          <div class="control-group form-group">
-            <div class="controls">
-              <label>Phone Number:</label>
-              <input type="tel" class="form-control" id="phone" name="txtContact" required data-validation-required-message="Please enter your phone number.">
-            </div>
-          </div>
-          <div class="control-group form-group">
+         <div class="control-group form-group">
             <div class="controls">
               <label>Email Address:</label>
-              <input type="email" class="form-control" id="email" name="txtEmail" required data-validation-required-message="Please enter your email address.">
+              <input type="email" class="form-control" id="txtEmail" name="txtEmail" required data-validation-required-message="Please enter your email address.">
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Message:</label>
-              <textarea rows="10" cols="100" class="form-control" id="message" name="txtMsg" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              <textarea rows="10" cols="100" class="form-control" id="txtMsg" name="txtMsg"  maxlength="999" style="resize:none"></textarea>
             </div>
           </div>
           <div id="success"></div>
