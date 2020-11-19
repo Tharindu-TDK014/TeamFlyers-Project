@@ -1,3 +1,10 @@
+<?php session_start();
+if(!isset($_SESSION["userName"]))
+{
+	header('Location:login.php');
+}
+?>
+
 <!doctype html>
 <head>
 <meta charset="utf-8">
@@ -11,7 +18,8 @@
 	<div class="content-wrapper">
 		 <?php
 		
-		 $con = mysqli_connect("localhost","root","","nse_e_com");
+		 $con = mysqli_connect("localhost","root","","e_com_db");
+		$_SESSION['pid'] = $_GET['pid'];
 		if(!$con)
 		{	
 			die("Cannot connect to DB server");	
@@ -49,7 +57,7 @@
 		<div class="review">
 			<h3> Review</h3>
 			<?php
-		$con = mysqli_connect("localhost","root","","nse_e_com");
+		$con = mysqli_connect("localhost","root","","e_com_db");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		
@@ -65,7 +73,7 @@
 			{
    				echo "
 						<p>".$row['P_Review']."</p>
-						<p><i>by  ".$row['C_Email']."</i> <br> on ".$row['Review_Date']."</p>
+						<p><i>by  ".$row['C_Name']."</i> <br> on ".$row['Review_Date']."</p>
 						<hr />
 				";
     
@@ -77,12 +85,12 @@
 			?>
 		</div>
 		
-		<div class="comment">
-			<textarea cols="75" rows="5" name="txtcmnt"></textarea>
-			
-		</div>
+		<h3> Comment</h3>
+		<form id="addcmnt" name="formdetails" method="post" action="addComment">
+		<textarea name="txtComment" required class="text"></textarea>
 		
-		<input type="submit" name="btnsubmit">
+		<input type="submit" name="btnsubmit" value="Comment">
+		</form>
 		 </div>
 		
 		
