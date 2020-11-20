@@ -106,7 +106,7 @@
 	<h2> Promotions </h2>
 	
 	<?php
-		$sql = "SELECT * FROM `product` WHERE `P_Offers`='1'";
+		$sql = "SELECT * FROM `product` WHERE `P_OfferStatus`='1'";
 		$result = mysqli_query($con,$sql);
 		
 		
@@ -115,9 +115,10 @@
 			while($row = mysqli_fetch_array($result))
 			{
 				?>
-	<div class="col-md-3s">
+	<div class="col-md-3">
 			<div class="product-top">
-			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
+			<img src="<?php echo $row['P_filepath']?>" class="img-rounded" height="200"   />
+				<div class="drate"><?php echo $row["P_Offers"]; ?>% off</div>
 			<div class="overlay">
 			<button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart"></i></button>	
 			<a  href="details.php?pid=<?php echo $row['P_ID']; ?>" ><button type="button" class="btn btn-secondary" title="More Details"><i class="fa fa-search"></i></button>
@@ -126,8 +127,11 @@
 				</div>
 		<div class="product-bottom text-center">
 		<h3> <?php echo $row["P_Name"]; ?> </h3>
-		<strike><h5>Rs: <?php echo $row["P_Price"]; ?></h5></strike>
-		<h5>Rs: <?php echo $row["P_OfferPrice"]; ?>
+		<div class="d-block">
+			<strike><h5>Rs: <?php echo $row["P_Price"]; ?></h5></strike>
+			<h5>Rs: <?php echo $row["P_OfferPrice"]; ?></h5>
+			</div>
+		
 		</div>
 		</div>
 	
@@ -169,10 +173,9 @@
 	
 	
 		
-			<div class="col-md-3ss">
-			
+			<div class="col-md-2">
 			<div class="product-top">
-			<img src="<?php echo $row['P_filepath']?>" class="img-rounded"   />
+			<img src="<?php echo $row['P_filepath']?>"  class="figure-img" height="200" />
 			<div class="overlay">
 			<button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart"></i></button>	
 			<a  href="details.php?pid=<?php echo $row['P_ID']; ?>" ><button type="button" class="btn btn-secondary" title="More Details"><i class="fa fa-search"></i></button>
@@ -182,15 +185,10 @@
 		<div class="product-bottom text-center">
 		<h3> <?php echo $row["P_Name"]; ?></h3>
 		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
-		<!-- nip -->
-           
-            <form action="cart.php" method="post">
-<td><input type="hidden" name="product_id" value=""></td>
-<input type="number" name="quantity" value="1" min="1" max="" placeholder="Quantity" required>
-<td>
-<div><input type="submit" name="submit" value="add to cart" /></div>
-</td>
-</form>
+		
+            <input type="number" name="quantity" value="1" min="1" max="" placeholder="Quantity" required>
+            <input type="hidden" name="product_id" value="">
+            <input type="submit" value="Add To Cart">
        
 			
 		</div>
@@ -218,13 +216,13 @@
 	<div class="footer">
 		
 			<div class="row">
-				<div class="col-md-3 col-sm-6">
+				<div class="col-md-4 col-sm-6">
 				<div class="single-footer">
 					<h3>About Us</h3>
 					<p>bla bla bla nipun bla bla bla nipun bla</p>
 				</div>
 				</div>
-				<div class="col-md-3 col-sm-6">
+				<div class="col-md-4 col-sm-6">
 					<div class="single-footer">
 					<h3>Contact Us</h3>
 						<ul class="link-area">
@@ -234,7 +232,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6">
+				<div class="col-md-4 col-sm-6">
 					<div class="single-footer">     
 					<h3> Follow us on</h3>
 					<ul class="socialmedia-list">

@@ -90,10 +90,19 @@
           <div class="control-group form-group">
             <div class="controls">
               <label>Message:</label>
-              <textarea rows="10" cols="100" class="form-control" id="txtMsg" name="txtMsg"  maxlength="999" style="resize:none"></textarea>
+              <textarea rows="5" cols="100" class="form-control" id="txtComment" name="txtComment"  maxlength="999" style="resize:none"></textarea>
             </div>
           </div>
-          <div id="success"></div>
+			
+			<div class="control-group form-group">
+            <div class="controls">
+              <label>Insert a Image</label>
+              <input type="file" name="file">
+            </div>
+          </div>
+			
+			
+          
           <!-- For success/fail messages -->
           <button type="submit" class="btn btn-primary" id="sendMessageButton" name="btnSubmit">Send Message</button>
        </form>

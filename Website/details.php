@@ -10,6 +10,9 @@ if(!isset($_SESSION["userName"]))
 <meta charset="utf-8">
 <title>Untitled Document</title>
 	<link rel="stylesheet" type="text/css" href="css/details.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -87,7 +90,7 @@ if(!isset($_SESSION["userName"]))
 		
 		<h3> Comment</h3>
 		<form id="addcmnt" name="formdetails" method="post" action="addComment.php">
-		<textarea name="txtComment" required class="text"></textarea>
+		<textarea rows="2" cols="100" class="form-control" id="txtMsg" name="txtMsg"  maxlength="999" style="resize:none" required class="text"></textarea>
 		
 		<input type="submit" name="btnsubmit" value="Comment">
 		</form>
