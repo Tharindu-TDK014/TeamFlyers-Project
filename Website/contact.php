@@ -10,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
 </head>
 
 <body>
@@ -75,10 +76,10 @@
     <div class="row">
       <div class="col-lg-8 mb-4">
         <h3>Send us a Message</h3>
-     	<form id="formmsg" name="formmsg" method="post" action="postmsg.php">
-			<input type="radio" name="rdotype" value="Help" id="rdotype_0" />
+     	<form id="formmsg" name="formmsg" method="post" action="postmsg.php" >
+			<input type="radio" name="rdotype" value="Help" id="rdotype_0" class="rdo1"/>
           Help
-			<input type="radio" name="rdotype" value="Complain" id="rdotype_1" />
+			<input type="radio" name="rdotype" value="Complain" id="rdotype_1" class="rdo2" />
           Complain
           
          <div class="control-group form-group">
@@ -90,14 +91,14 @@
           <div class="control-group form-group">
             <div class="controls">
               <label>Message:</label>
-              <textarea rows="5" cols="100" class="form-control" id="txtComment" name="txtComment"  maxlength="999" style="resize:none"></textarea>
+              <textarea rows="5" cols="100" class="form-control" id="txtMsg" name="txtMsg"  maxlength="999" style="resize:none"></textarea>
             </div>
           </div>
 			
 			<div class="control-group form-group">
             <div class="controls">
               <label>Insert a Image</label>
-              <input type="file" name="file">
+              <input type="file" name="file" id="file">
             </div>
           </div>
 			

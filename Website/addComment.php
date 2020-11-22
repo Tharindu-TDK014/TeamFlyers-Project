@@ -1,6 +1,7 @@
-<?php session_start();
+<?php 
 
 $comment = $_POST['txtComment'];
+
 
 $con = mysqli_connect("localhost","root","","e_com_db");
 if(!$con)
@@ -8,7 +9,7 @@ if(!$con)
 	die("Cannot connect to DB Server");
 }
 
-$sql = "INSERT INTO `productreview`(`Review_ID`, `P_ID`, `P_Name`, `C_Name`, `Review_Date`, `P_Review`, `P_Rating`) VALUES (NULL,2,NULL,'".$_SESSION['userName']."','".date("y-m-d")."','".$comment."',NULL)";
+$sql = "INSERT INTO `productreview`(`Review_ID`, `P_ID`, `P_Name`, `C_Name`, `Review_Date`, `P_Review`, `P_Rating`) VALUES (NULL,2,NULL,'ravindu@gmail.com','".date("y-m-d")."','".$comment."',NULL)";
 
 
 

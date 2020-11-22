@@ -12,7 +12,8 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>	
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	
 </head>
 <body>
@@ -24,22 +25,36 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-	<nav class="navbar navbar-expand-sm bg-dark justify-content-end">
+	<div class="navbar-nav justify-content-center d-inline-flex ">
+		<i class="fas fa-user"  style="color: aliceblue"></i>
+		<?php
+		session_start();
+		echo " hello " . $_SESSION['userName'];
+		try{
+			if(($_SESSION['userName']=="")|| ($_SESSION['userName']==null))
+			{
+				throw new Exception('Hello User');
+			}
+		}
+		
+		catch (Exception $ex) {
+			//Print out the exception message.
+			echo $ex->getMessage();
+		}
+		?>
+	</div>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+	<nav class="navbar navbar-expand-sm bg-dark">
     <ul class="navbar-nav d-inline-flex">
-      <li class="nav-item d-inline-flex">
-        <i class="fas fa-truck" style="color:#DDDDDD;"></i>
-		<a class="nav-link" href="#">Shipping Method</a>
-      </li>
-	  <li class="nav-item">
+       <li class="nav-item d-inline-flex">
         <i class="fas fa-phone" style="color:#DDDDDD;"></i>
 		<a class="nav-link" href="contact.php">Contact Us</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item d-inline-flex">
         <i class="fas fa-sign-in-alt" style="color:#DDDDDD;"></i>
 		<a class="nav-link" href="login.php">Sign in/Register</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item d-inline-flex">
         <i class="fas fa-sign-out-alt" ></i>
 		<a class="nav-link" href="logout.php">Log Out</a>
       </li>
@@ -60,21 +75,7 @@
 	
 	
 <div class="container">
-	<?php
-		session_start();
-		echo "hello" . $_SESSION['userName'];
-		try{
-			if($_SESSION['userName']=="")
-			{
-				throw new Exception('Hello User');
-			}
-		}
-		
-		catch (Exception $ex) {
-			//Print out the exception message.
-			echo $ex->getMessage();
-		}
-		?>
+	
   
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -127,8 +128,8 @@
 				</div>
 		<div class="product-bottom text-center">
 		<h3> <?php echo $row["P_Name"]; ?> </h3>
-		<div class="d-block">
-			<strike><h5>Rs: <?php echo $row["P_Price"]; ?></h5></strike>
+		<div class="d-inline-flex">
+			<strike><h5>Rs: <?php echo $row["P_Price"]; ?></h5></strike> &nbsp;&nbsp;&nbsp;
 			<h5>Rs: <?php echo $row["P_OfferPrice"]; ?></h5>
 			</div>
 		

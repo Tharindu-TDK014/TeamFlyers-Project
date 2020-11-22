@@ -90,7 +90,7 @@ if(!isset($_SESSION["userName"]))
 		
 		<h3> Comment</h3>
 		<form id="addcmnt" name="formdetails" method="post" action="addComment.php">
-		<textarea rows="2" cols="100" class="form-control" id="txtMsg" name="txtMsg"  maxlength="999" style="resize:none" required class="text"></textarea>
+		<textarea rows="2" cols="100" class="form-control" id="txtComment" name="txtComment"  maxlength="999" style="resize:none" required class="text"></textarea>
 		
 		<input type="submit" name="btnsubmit" value="Comment">
 		</form>
