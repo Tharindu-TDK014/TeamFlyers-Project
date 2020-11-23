@@ -1,4 +1,11 @@
- <?php
+<?php session_start();
+
+if(!isset($_SESSION["admin"]))
+{
+  header('Location:CRM_Login.php');
+}
+?>
+<?php
 		
 		 $con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
@@ -57,6 +64,7 @@
 <body>
 	<div id="header">
 		<h2 style="color:#FFFFFF;">Hi Admin- Reports</h2>
+		<a href=""  class="btn btn-primary"> CRM Management</a>
 		<a href=""  class="btn btn-danger"> Log Out</a>
 	</div>
 	
