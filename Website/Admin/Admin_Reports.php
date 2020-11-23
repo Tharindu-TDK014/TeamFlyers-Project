@@ -6,7 +6,7 @@
 			die("Cannot connect to DB server");	
 		}
 				  
-				  $sql ="SELECT * FROM `stock` ";
+				  $sql ="SELECT `Stock_ID`, `P_ID`, `Stock_Qty` FROM `stock` WHERE 1";
 				  
 					
 		$result = mysqli_query($con,$sql); ?>
@@ -34,17 +34,20 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
 		  
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
+            ['Stock ID', 'Stock Qty'],
+          <?php
+			while($row = mysqli_fetch_array($result))
+			{
+				echo "['".$row["S_ID"]."',".$row["Stock_Qty"]."],";
+			}
+			
+		  ?>
         ]);
 
         var options = {
           chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            title: 'Stock Management',
+            subtitle: 'Stock',
           }
         };
 
