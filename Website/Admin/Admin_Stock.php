@@ -18,7 +18,7 @@
 	<div id="header">
 		<h2 style="color:#FFFFFF;">Hi Admin- Stock Details</h2>
 		<a href="Insert_Stock.php"> <button type="button" class="btn btn-success"> Add Stock </button></a>
-		<a href=""  class="btn btn-primary"> CRM Management</a>
+		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
 		<a href=""  class="btn btn-danger"> Log Out</a>
 	</div>
 	
