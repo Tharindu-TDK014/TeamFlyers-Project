@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" href="img/logo.jpg">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -159,50 +160,179 @@
 	
 	<!-- Displaying all the products-->
 	
-	<div class="product-container">
-	<?php
-		
-		$sql ="SELECT * FROM `product` ";	
-					
-		$result = mysqli_query($con,$sql);
-			
-		if(mysqli_num_rows($result)> 0)
-	{
-			while($row = mysqli_fetch_assoc($result))
-			{
-				?>
-	
-	
-		
-			<div class="col-md-2">
-			<div class="product-top">
-			<img src="<?php echo $row['P_filepath']?>"  class="figure-img" height="200" />
-			<div class="overlay">
-			<button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart"></i></button>	
-			<a  href="details.php?pid=<?php echo $row['P_ID']; ?>" ><button type="button" class="btn btn-secondary" title="More Details"><i class="fa fa-search"></i></button>
-				</a>
-				</div>
-				</div>
-		<div class="product-bottom text-center">
-		<h3> <?php echo $row["P_Name"]; ?></h3>
-		<h5>Rs: <?php echo $row["P_Price"]; ?></h5>
-		
-            <input type="number" name="quantity" value="1" min="1" max="" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="">
-            <input type="submit" value="Add To Cart">
-       
-			
-		</div>
-	</div>
-		
+	 <?php
 
-     	
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+if(!empty($_GET["action"])) {
+switch($_GET["action"]) {
+	case "add":
+		if(!empty($_POST["quantity"])) {
+			$productByCode = $db_handle->runQuery("SELECT * FROM Product WHERE P_ID='" . $_GET["code"] . "'");
+			$itemArray = array($productByCode[0]["P_ID"]=>array('P_Name'=>$productByCode[0]["P_Name"], 'P_ID'=>$productByCode[0]["P_ID"], 'quantity'=>$_POST["quantity"], 'P_Price'=>$productByCode[0]["P_Price"], 'P_filepath'=>$productByCode[0]["P_filepath"]));
+			
+			if(!empty($_SESSION["cart_item"])) {
+				if(in_array($productByCode[0]["P_ID"],array_keys($_SESSION["cart_item"]))) {
+					foreach($_SESSION["cart_item"] as $k => $v) {
+							if($productByCode[0]["P_ID"] == $k) {
+								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+									$_SESSION["cart_item"][$k]["quantity"] = 0;
+								}
+								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+							}
+					}
+				} else {
+					$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+				}
+			} else {
+				$_SESSION["cart_item"] = $itemArray;
+			}
+		}
+	break;
+	}
+}
+?>
+
+
+
+<div id="product-container">
+	<div class="txt-heading">Products</div>
+	<?php
+	$product_array = $db_handle->runQuery("SELECT * FROM Product ORDER BY P_ID ASC");
+	if (!empty($product_array)) { 
+		foreach($product_array as $key=>$value){
+	?>
+		<div class="col-md-3">
+        	
+				
+            
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+		<div class="product-image"><img src="<?php echo $product_array[$key]["P_filepath"]; ?>" style="width:200px ; height:200px;"		></div>
+		
+		
+		
+		
+        <form method="post" action="cart.php?action=add&code=<?php echo $product_array[$key]["P_ID"]; ?>">
+			<div class="product-tile-footer">
+			<div class="product-title"><?php echo $product_array[$key]["P_Name"]; ?></div>
+			<div class="product-price"><?php echo "$".$product_array[$key]["P_Price"]; ?></div>
+			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+			</div>
+			</form>
+		</div>
+	<?php
+		}
+	}
+	?>
+</div>
+
     
-	 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
 	
 	
 	<?php
-			}
+			{
 	}
 	
 	?>
@@ -211,6 +341,8 @@
 	</div>
 		
 	
+	
+		
 	
 		
 		
