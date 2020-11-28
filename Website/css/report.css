@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.container{
+	width: auto;
+	height: auto;
+	display: inline-flex;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin:10px;
+	padding: 10;
+		
+}
+
+h2{
+	text-align: center;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 30px;
+}
+
+#table1{
+	font-family: Arial, Helvetica, sans-serif;
+  	border-collapse: collapse;
+}
+
+#table1 td, #table1 th{
+	border: 1px solid #ddd;
+ 	padding: 8px;
+}
+
+#table1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#7E7878;
+  color: white;
+}
+
+#table1 tr:nth-child(even){background-color: #f2f2f2;}
+
+#table1 tr:hover {background-color: #ddd;}
+
