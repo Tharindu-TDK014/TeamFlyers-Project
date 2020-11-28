@@ -18,6 +18,7 @@
 	<div id="header">
 		<h2 style="color:#FFFFFF;">Hi Admin- Product Details</h2>
 		<a href="Insert_Products.php"> <button type="button" class="btn btn-success"> Add Products </button></a>
+		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
 		<a href=""  class="btn btn-danger"> Log Out</a>
 	</div>
 	
