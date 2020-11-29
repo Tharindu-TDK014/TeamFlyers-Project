@@ -180,6 +180,8 @@ if(isset($_SESSION["cart_item"])){
 <?php
 
 $db_handle->exequ( "INSERT INTO `cart`(`Cart_ID`, `No_Of_Products`, `Sub_Total`) VALUES(null,   '".$item["quantity"]."'  ,'".$total_price."' )"); 
+
+
 ?>
 <img src="img/ch.PNG" width="283" height="82" alt="checkout now"  /> 
 
