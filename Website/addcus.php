@@ -10,7 +10,7 @@
 	$zip=$_POST["txt_zipcode"];
     
     //connecting to database
-    $con=mysqli_connect("localhost","root","","e_com_db");
+    $con=mysqli_connect("localhost","id15543581_root","rsmkds@123AA","id15543581_e_com_db");
     if(!$con){
         die("Error in db connection, Please try again");
     }
@@ -25,7 +25,7 @@
     //validation and redirection
     if(mysqli_query($con,$sql)){
 
-        header('Location:index.php');
+        header('Location:bill.php');
     }
 
     //closing database connection
