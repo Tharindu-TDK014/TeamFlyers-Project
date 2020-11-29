@@ -1,5 +1,3 @@
-
-
 <?php
 
     $name=$_POST["txt_name"];
