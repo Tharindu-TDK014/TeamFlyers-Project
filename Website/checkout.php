@@ -89,22 +89,38 @@
 
 
 
-
+<table class="table table-dark" >
+  <tr>
+    <td>Cart_id</td>
+    
+  </tr>
 <?php
     $con=mysqli_connect("localhost","root","","e_com_db");
     if(!$con){
         die("Error occured in db connection, Please try again");
     }
    $sql="SELECT Cart_ID FROM `cart` ORDER BY Cart_ID DESC LIMIT 1; ";
- 
-    
-  
+     
+     $result = mysqli_query($con,$sql);
+      
+    if(mysqli_num_rows($result)> 0)
+  {
+      while($row = mysqli_fetch_assoc($result))
+      {
+      
+?>
 
+                <tr>
+                  
+                  <td><?php echo $row['Cart_ID'] ?></td>
+                 
+                </tr>
 
-
-    mysqli_close($con);
-    ?>
-<h3> <?php echo "Cart_ID is :".$sql; ?></h3>
+        <?php
+      }
+    }
+      ?>
+                </table>
 
 
 

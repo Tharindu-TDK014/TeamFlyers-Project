@@ -1,3 +1,10 @@
+<?php session_start();
+
+if(!isset($_SESSION["product"]))
+{
+  header('Location:Admin_Login.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -27,6 +34,7 @@
         <a href="Admin_Orders" class="btn badge"><h5>Orders</h5></a><br><br>
         <a href="Admin_Promotions.php" class="btn badge"><h5>Promotions</h5></a><br><br>
         <a href="Admin_reports.php" class="btn badge"><h5>Reports</h5></a><br><br>
+		<a href="report.php" class="btn badge"><h5>Monthly Sales</h5></a><br><br>
     </div>
 	
 	<div id="Section">
