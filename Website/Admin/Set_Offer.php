@@ -34,6 +34,7 @@ if(!isset($_SESSION["product"]))
         <a href="Admin_Orders" class="btn badge"><h5>Orders</h5></a><br><br>
         <a href="Admin_Promotions.php" class="btn badge"><h5>Promotions</h5></a><br><br>
         <a href="Admin_reports.php" class="btn badge"><h5>Reports</h5></a><br><br>
+		<a href="" class="btn badge"><h5>Monthly Sales</h5></a><br><br>
     </div>
 	
 	<div id="Section">
