@@ -5,7 +5,7 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 <html>
   <head>
 	
-	<link rel="stylesheet" type="text/css" href="css/report.css">
+	<link rel="stylesheet" type="text/css" href="CSS/report.css">
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	  
@@ -81,7 +81,7 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 
   <body>
 	  
-	  <h1>Monthly Sales Report</h1>
+	  <h1>Sales Report</h1>
 	  
 	  <div class="card">
 		  
@@ -170,7 +170,8 @@ $con = mysqli_connect("localhost","root","","e_com_db");
       
     </tbody>
   </table>
-		  </div>
+		  </div><br>
+	<button onClick="window.print();" style="margin-left: 110px;" class="btn btn-primary" id="print-btn">print report</button>
 	  
   </body>
 </html>

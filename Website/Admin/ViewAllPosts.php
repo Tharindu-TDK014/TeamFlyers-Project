@@ -48,7 +48,7 @@ if(!isset($_SESSION["admin"]))
                   <td><?php echo $row['Post_Type'] ?></td>
                   <td><?php echo $row['Post_Date'] ?></td>
                   <td><?php echo $row['Message'] ?></td>
-                  <td><a class="btn btn-primary" href="mailto:$row['C_Email']" role="button">Reply</a></td>
+                  <td><a class="btn btn-primary" href="mailto:nipunspiceexports@gmail.com" role="button">Reply</a></td>
                 </tr>
 
         <?php
