@@ -65,7 +65,7 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 			<input type="text" name="search" id="searchBox" class="txtsearch" />
 			<input type="button" class="btsearch" value="Search">
 		</form>
-		<a href="Admin/Admin_CustomerDetails.php" class="btn-primary">Admin</a>
+		<a href="Admin/Admin_CustomerDetails.php" class="btn btn-primary">Admin</a>
 	</nav>
 <div class="container">
 
