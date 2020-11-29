@@ -1,10 +1,17 @@
+<?php session_start();
+
+if(!isset($_SESSION["product"]))
+{
+  header('Location:Admin_Login.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Products</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
-	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -18,7 +25,7 @@
 	<div id="header">
 		<h2 style="color:#FFFFFF;">Hi Admin- Orders</h2>
 		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
-		<a href=""  class="btn btn-danger"> Log Out</a>
+		<a href="Admin_Login.php"  class="btn btn-danger"> Log Out</a>
 	</div>
 	
 <div id="navigation"><br>

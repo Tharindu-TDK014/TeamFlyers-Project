@@ -1,10 +1,17 @@
+<?php session_start();
+
+if(!isset($_SESSION["product"]))
+{
+  header('Location:Admin_Login.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Stock</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
-	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -19,10 +26,10 @@
 		<h2 style="color:#FFFFFF;">Hi Admin- Stock Details</h2>
 		<a href="Insert_Stock.php"> <button type="button" class="btn btn-success"> Add Stock </button></a>
 		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
-		<a href=""  class="btn btn-danger"> Log Out</a>
+		<a href="Admin_Login.php"  class="btn btn-danger"> Log Out</a>
 	</div>
 	
-<div id="navigation"><br>
+	<div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
         <a href="Admin_Product.php" class="btn badge"><h5>Product Details</h5></a><br><br>
         <a href="Admin_Stock.php" class="btn badge"><h5>Stock</h5></a><br><br>
@@ -35,17 +42,17 @@
               <thead>
                 <tr>
 				<th>Stock ID</th>
-                  <th>P ID</th>
-                  <th>P Type</th>
-				  <th>Stock Arrived Date</th>
-				  <th>Stock Exp Date</th>
-				  <th>Stock Quantity</th>
-					<th>Status</th>
+                <th>P ID</th>
+                <th>P Type</th>
+				<th>Stock Arrived Date</th>
+				<th>Stock Exp Date</th>
+				<th>Stock Quantity</th>
+				<th>Status</th>
                  
                 </tr>
               </thead>
               <tbody>
-			 <?php
+		<?php
 		
 		 $con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
@@ -72,14 +79,14 @@
 				<td><?php echo $row['Stock_Arrive_Date'] ?></td>
 				<td><?php echo $row['Stock_Exp_Date'] ?></td>
 				<td><?php echo $row['Stock_Qty'] ?></td>
-				 <td><?php echo $row['P_Status'] ?></td>	 
-				 <td>
+				<td><?php echo $row['P_Status'] ?></td>	 
+			 	<td>
 	
 				<a  href="Edit_Stock.php?id=<?php echo $row['Stock_ID']; ?>" title="click for delete" onclick="return confirm('Edit Stock?')" class="btn btn-danger">Edit or Remove</a> 
 			
                  
 				
-                  </td>
+                </td>
                 </tr>
                
         <?php
@@ -88,7 +95,7 @@
     
     
     
-      </table>
+      	</table>
 		</div>
 	
 	
