@@ -10,4 +10,5 @@ if(!isset($_SESSION["admin"]))
 <h1>Promotions</h1>
 
 
+
 <?php require('Include/footerCRM.php'); ?>
