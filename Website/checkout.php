@@ -63,7 +63,7 @@
 		function validateZip()
 		{
 			var zip = document.getElementById("txt_zipcode").value;
-			if((isNaN(zip))||(zip.length != 5))
+			if(isNaN(zip))
 			{
 				alert("Please enter a valid ZipCode");
 				return false;
@@ -86,15 +86,44 @@
 </head>
 <body>
 	
+
+
+
+
+<?php
+    $con=mysqli_connect("localhost","root","","e_com_db");
+    if(!$con){
+        die("Error occured in db connection, Please try again");
+    }
+   $sql="SELECT Cart_ID FROM `cart` ORDER BY Cart_ID DESC LIMIT 1; ";
+ 
+    
+  
+
+
+
+    mysqli_close($con);
+    ?>
+<h3> <?php echo "Cart_ID is :".$sql; ?></h3>
+
+
+
+
+
 	<div class="container">
 		<div class="img">
 			<img src="img/chq.png">
 		</div>
 		<div class="login-content">
-			<form id="form2" name="form_addOrder" method="post" action="addcus.php">
-				<div class="input-field1">
+			<form id="form" name="form_addOrder" method="post" action="addcus.php">
+				
+        <div class="input-field1">
 				<input type="text" name="txt_name" id="txt_name"  placeholder=" Name" >
 				</div>
+
+        <div class="input-field1">
+        <input type="text" name="txt_cart" id="txt_cart"  placeholder=" cartid" >
+        </div>
 				
 				
 				

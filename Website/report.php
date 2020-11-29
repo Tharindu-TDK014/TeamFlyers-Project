@@ -8,7 +8,9 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 	<link rel="stylesheet" type="text/css" href="css/report.css">
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	  
     <script type="text/javascript">
+		
 	
       // Load the Visualization API and the controls package.
       google.charts.load('current', {'packages':['corechart', 'controls']});
@@ -73,9 +75,60 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 		
 		
     </script>
+	  
+	  
   </head>
 
   <body>
+	  
+	  <h1>Monthly Sales Report</h1>
+	  
+	  <div class="card">
+		  
+		  <?php
+			$sql="SELECT p.C_fname, SUM(Sub_Total)'TOTAL' from cart c, customer p where c.C_Email=p.C_Email AND 'TOTAL' = (SELECT MAX('TOTAL')
+                  from cart c)";
+			$result= mysqli_query($con,$sql);
+			if(mysqli_num_rows($result)> 0)
+			{
+				while($row = mysqli_fetch_array($result))
+				{
+			?>
+				<h3>Best Customer</h3>
+		  		<p> <?php echo $row["C_fname"]; ?> </p>
+		  		
+			<?php
+				}
+			}
+
+		?>
+	  </div>
+	  
+	  <div class="card">
+		  
+		  <?php
+			$sql="SELECT p.P_Name, COUNT(No_Of_Products)'count' from cart c, product p where c.P_ID=p.P_ID AND 'count' = (SELECT MAX('count')
+                  from cart c)";
+			$result= mysqli_query($con,$sql);
+			if(mysqli_num_rows($result)> 0)
+			{
+				while($row = mysqli_fetch_array($result))
+				{
+			?>
+				<h3>Best selling product</h3>
+		  		<p> <?php echo $row["P_Name"]; ?> </p>
+		  		
+			<?php
+				}
+			}
+
+		?>
+	  </div>
+	  <br>
+	
+  
+  </nav>
+	  
     <div class="container">
 		<h2>Monthly Sale</h2>
 	  <!--Div that will hold the dashboard-->
@@ -91,13 +144,13 @@ $con = mysqli_connect("localhost","root","","e_com_db");
       <tr>
 		<th>Product ID</th>
         <th>Product Name</th>
-        <th>No of items</th>
+        <th>No of items sold</th>
         <th>Sub total</th>
       </tr>
     </thead>
     <tbody>
 		<?php
-			$sql="SELECT p.P_ID,P_Name,SUM(c.No_Of_Products) 'Total', SUM(c.Sub_Total) 'Sub_Total' FROM product p, cart c where p.P_ID=c.P_ID group by P_ID ";
+			$sql="SELECT p.P_ID,P_Name,SUM(c.No_Of_Products) 'Total', SUM(c.Sub_Total) 'Sub_Total' FROM product p, cart c where p.P_ID=c.P_ID group by p.P_ID ";
 			$result= mysqli_query($con,$sql);
 			while($row = mysqli_fetch_array($result))
 			{
