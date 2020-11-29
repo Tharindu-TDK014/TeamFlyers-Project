@@ -22,7 +22,7 @@
     
     //validation and redirection
     if(mysqli_query($con,$sql)){
-        header('Location:index.php');
+        header('Location:login.php');
     }
 
     //closing database connection
