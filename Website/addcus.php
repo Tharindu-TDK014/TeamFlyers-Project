@@ -3,7 +3,7 @@
 <?php
 
     $name=$_POST["txt_name"];
-    
+    $cartid=$_POST["txt_cart"];
     $contact=$_POST["txt_tele"];
     $email=$_POST["txt_email"];
    $state=$_POST["txt_state"];
@@ -18,7 +18,7 @@
     }
 
     //inserting values to sql
-    $sql="INSERT INTO `cus_order` (`Order_ID`, `Cart_ID`, `C_Email`, `C_Name`, `To_Address`, `To_Country`, `To_State`, `To_ZipCode`, `Order_Date`, `TP`) VALUES (NULL, '6', 'ihgijgflkbjgf', 'ufhgfugifhgufh', 'ffuhsuihuihu', 'irhyroyrowhgwr', 'fgruifgf', '548554', CURRENT_TIMESTAMP, '0757847845')";
+    $sql="INSERT INTO `cus_order` (`Order_ID`, `Cart_ID`, `C_Email`, `C_Name`, `To_Address`, `To_Country`, `To_State`, `To_ZipCode`, `Order_Date`, `TP`) VALUES (NULL, '".$cartid."', '".$email."', '".$name."', '".$address."', '".$country."', '".$state."', '".$zip."', CURRENT_TIMESTAMP, '".$contact."')";
 
 
 
