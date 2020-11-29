@@ -25,7 +25,7 @@
     //validation and redirection
     if(mysqli_query($con,$sql)){
 
-        header('Location:bill.php');
+        header('Location:index.php');
     }
 
     //closing database connection
