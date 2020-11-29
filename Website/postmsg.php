@@ -18,6 +18,7 @@ $sql="INSERT INTO `post`(`Post_ID`, `C_Email`, `Post_Type`, `Post_Date`, `Messag
 
 //validation and redirection
     if(mysqli_query($con,$sql)){
+		echo "Message sent Successfully";
         header('Location:contact.php');
     }
 
