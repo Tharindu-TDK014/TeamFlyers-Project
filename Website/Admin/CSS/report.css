@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.container{
+	width: auto;
+	height: auto;
+	display: inline-flex;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin:10px;
+	padding: 10;
+		
+}
+h1{
+	text-align: center;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	font-size: 45px;
+	
+}
+
+.card{
+	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 350px;
+	height: 200px;
+	margin:10px 0 10px 20px;
+	padding: 0px 0px 0px 0px ;
+	font-family: arial;
+	border-radius: 15px;
+	background:#62DE14;
+	color: aliceblue;
+	
+}
+
+.card h3{
+	text-align: center;
+	font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-size: 30px;	
+}
+
+.card p{
+	text-align: center;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-size: 25px;
+}
+h2{
+	text-align: center;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 30px;
+}
+
+#table1{
+	font-family: Arial, Helvetica, sans-serif;
+  	border-collapse: collapse;
+}
+
+#table1 td, #table1 th{
+	border: 1px solid #ddd;
+ 	padding: 8px;
+}
+
+#table1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#7E7878;
+  color: white;
+}
+
+#table1 tr:nth-child(even){background-color: #f2f2f2;}
+
+#table1 tr:hover {background-color: #ddd;}
+
