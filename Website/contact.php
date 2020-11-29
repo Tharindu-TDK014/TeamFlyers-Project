@@ -18,7 +18,7 @@
 	<!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="main.php">Contact Us</a>
+      <a class="navbar-brand" href="index.php">Contact Us</a>
       
       </div>
   
@@ -98,7 +98,7 @@
 			<div class="control-group form-group">
             <div class="controls">
               <label>Insert a Image</label>
-             <input type="file" name="file1" id="file1" />
+             <input type="file" name="file1" id="file1">
             </div>
           </div>
 			

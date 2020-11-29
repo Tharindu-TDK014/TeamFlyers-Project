@@ -45,7 +45,7 @@
          	<li class="nav-item"><a href="./ViewAllCustomers.php" class="nav-link">All Customers</a>          </li>       
          	<li class="nav-item"><a href="./ViewAllProducts.php" class="nav-link">All Products</a>        </li>
          	<li class="nav-item"><a href="./ViewAllPosts.php" class="nav-link">Posts</a>        </li>
-            <li class="nav-item"><a href="./SendPromotions.php" class="nav-link">Promotions</a>    </li>
+            <li class="nav-item"><a href="./ViewPostReport.php" class="nav-link">Post Report</a>    </li>
             <li class="nav-item"><a href="./CustomerSurvey.php" class="nav-link">Surveys</a>         </li>
             <li class="nav-item"><a href="./CRMreports.php" class="nav-link">Reports</a>         </li>
          </ul>
