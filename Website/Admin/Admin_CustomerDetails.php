@@ -1,3 +1,10 @@
+<?php session_start();
+
+if(!isset($_SESSION["product"]))
+{
+  header('Location:Admin_Login.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
