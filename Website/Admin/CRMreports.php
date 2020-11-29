@@ -133,7 +133,7 @@ if(isset($_POST["create PDF"]))
          fetch_data();
          ?>
         
-        <input type="submit" name="create PDF" class="btn btn-success" value="Create PDF"/>
+        <input type="submit"  onclick="window.print();" name="create PDF" class="btn btn-success" value="Create PDF"/>
         </form>
 </div>
  </div>
