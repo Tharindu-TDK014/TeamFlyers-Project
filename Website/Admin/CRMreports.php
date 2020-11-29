@@ -10,7 +10,7 @@ if(!isset($_SESSION["admin"]))
 function fetch_data()
 {
   $output = ""; //store table data as HTML format return variable in function
-  $connect = mysqli_connect("localhost: 3308","root","","e_com_db");
+  $connect = mysqli_connect("localhost","id15543581_root","rsmkds@123AA","id15543581_e_com_db");
   $sql ="SELECT * FROM `payment` ORDER BY Invoice_No ASC";
   $result = mysqli_query($connect,$sql);
   while($row = mysqli_fetch_array($result))
