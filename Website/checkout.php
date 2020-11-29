@@ -87,7 +87,7 @@
 <body>
 	
 
-
+<h1> we do all payment cash on delivery</h1>
 
 <table class="table table-dark" >
   <tr>
@@ -95,7 +95,7 @@
     
   </tr>
 <?php
-    $con=mysqli_connect("localhost","root","","e_com_db");
+    $con=mysqli_connect("localhost","id15543581_root","rsmkds@123AA","id15543581_e_com_db");
     if(!$con){
         die("Error occured in db connection, Please try again");
     }
