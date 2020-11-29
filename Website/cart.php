@@ -150,6 +150,8 @@ if(isset($_SESSION["cart_item"])){
 				<?php
 				$total_quantity += $item["quantity"];
 				$total_price += ($item["P_Price"]*$item["quantity"]);
+
+
 		}
 		?>
 
@@ -166,7 +168,18 @@ if(isset($_SESSION["cart_item"])){
 <td></td>
 <td></td>
 <td>
-<a href="checkout.php"><img src="img/ch.PNG" width="283" height="82" alt="checkout now"  />
+
+
+
+
+<a href="checkout.php">
+	
+<?php
+$db_handle->exequ( "INSERT INTO `cart`(`Cart_ID`, `No_Of_Products`, `Sub_Total`) VALUES(null,   '".$item["quantity"]."'  ,'".$total_price."' )"); ?>
+	
+
+	<img src="img/ch.PNG" width="283" height="82" alt="checkout now"  />
+	
 </td></tr>
 </tbody>
 </table>		

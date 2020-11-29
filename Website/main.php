@@ -172,6 +172,7 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 	<div class="product-container">
 	<?php
 
+<<<<<<< Updated upstream
 	$product_array = $db_handle->runQuery("SELECT * FROM Product ORDER BY P_ID ASC");
 		if (!empty($product_array)) { 
 			foreach($product_array as $key=>$value){
@@ -205,6 +206,79 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 		}
 	?>
 	</div>
+=======
+
+
+
+
+
+
+
+
+<div class="product-container">
+<?php
+
+$product_array = $db_handle->runQuery("SELECT * FROM Product ORDER BY P_ID ASC");
+	if (!empty($product_array)) { 
+		foreach($product_array as $key=>$value){
+	?>
+	
+		
+<div class="col-md-2">
+<div class="product-top">
+<img src="<?php echo $product_array[$key]["P_filepath"]; ?>"
+class="figure-img" height="200" />
+<div class="overlay">
+<button type="button" class="btn btn-secondary"
+title="Add to Wishlist"><i class="fa fa-heart"></i></button>
+<a href="details.php?pid=<?php echo
+$row['P_ID']; ?>" ><button type="button" class="btn btn-secondary"
+title="More Details"><i class="fa fa-search"></i></button>
+</a>
+</div>
+</div>
+<div class="product-bottom text-center">
+ <form method="post" action="cart.php?action=add&code=<?php echo $product_array[$key]["P_ID"]; ?>">
+<h3> <?php echo $product_array[$key]["P_Name"]; ?></h3>
+<h5>Rs: <?php echo "$".$product_array[$key]["P_Price"]; ?></h5>
+ <input type="number" name="quantity" value="1" min="1"
+max="" placeholder="Quantity" required>
+ <input type="hidden" name="product_id" value="">
+ <input type="submit" value="Add To Cart" class="btnAddAction">
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+            
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+>>>>>>> Stashed changes
 	
 	<div class="footer">
 	<div class="row">
