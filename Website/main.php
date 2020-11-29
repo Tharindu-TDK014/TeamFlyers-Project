@@ -202,7 +202,7 @@ switch($_GET["action"]) {
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
-		<div class="col-md-3">
+		<div class="col-md-2">
         	
 				
             

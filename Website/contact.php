@@ -98,7 +98,7 @@
 			<div class="control-group form-group">
             <div class="controls">
               <label>Insert a Image</label>
-              <input type="file" name="file" id="file">
+             <input type="file" name="file1" id="file1" />
             </div>
           </div>
 			
