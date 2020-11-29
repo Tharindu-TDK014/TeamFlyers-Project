@@ -56,7 +56,7 @@
 					  if($val)
 					  {
 						  $_SESSION["userName"]=$uname;
-						  header('Location:main.php');
+						  header('Location:index.php');
 
 					  }
 					  else
@@ -68,7 +68,7 @@
             	<a href="#">Forgot Password?</a>
 				<a href="signup.php">Dont have an acount?</a>
             	<input type="submit" class="btn" name="btnsubmit" value="Login">
-				<a href="login.php">Login</a>
+				
             </form>
         </div>
     </div>

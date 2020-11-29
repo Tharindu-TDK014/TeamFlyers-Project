@@ -8,7 +8,9 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 	<link rel="stylesheet" type="text/css" href="css/report.css">
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	  
     <script type="text/javascript">
+		
 	
       // Load the Visualization API and the controls package.
       google.charts.load('current', {'packages':['corechart', 'controls']});
@@ -73,9 +75,56 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 		
 		
     </script>
+	  
+	  
   </head>
 
   <body>
+	  <div class="card">
+		  <h2>Best Customer</h2>
+		  <?php
+			$sql="SELECT p.C_fname, SUM(Sub_Total)'TOTAL' from cart c, customer p where c.C_Email=p.C_Email AND 'TOTAL' = (SELECT MAX('TOTAL')
+                  from cart c)";
+			$result= mysqli_query($con,$sql);
+			if(mysqli_num_rows($result)> 0)
+			{
+				while($row = mysqli_fetch_array($result))
+				{
+			?>
+				
+		  		<h3> <?php echo $row["C_fname"]; ?> </h3>
+		  		
+			<?php
+				}
+			}
+
+		?>
+	  </div>
+	  
+	  <div class="card">
+		  <h2>Best selling product</h2>
+		  <?php
+			$sql="SELECT p.P_Name, COUNT(No_Of_Products)'count' from cart c, product p where c.P_ID=p.P_ID AND 'count' = (SELECT MAX('count')
+                  from cart c)";
+			$result= mysqli_query($con,$sql);
+			if(mysqli_num_rows($result)> 0)
+			{
+				while($row = mysqli_fetch_array($result))
+				{
+			?>
+				
+		  		<h3> <?php echo $row["P_Name"]; ?> </h3>
+		  		
+			<?php
+				}
+			}
+
+		?>
+	  </div>
+	
+  
+  </nav>
+	  
     <div class="container">
 		<h2>Monthly Sale</h2>
 	  <!--Div that will hold the dashboard-->
