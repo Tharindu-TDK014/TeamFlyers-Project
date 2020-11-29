@@ -23,7 +23,7 @@ if(!isset($_SESSION["product"]))
 
 <body>
 	<div id="header">
-		<h2 style="color:#FFFFFF;">Hi Admin- Promotions</h2>
+		<h2 style="color:#FFFFFF;">Hi Admin- Post Report</h2>
 		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
 		<a href="Admin_Login.php"  class="btn btn-danger"> Log Out</a>
 	</div>
