@@ -1,10 +1,17 @@
+<?php session_start();
+
+if(!isset($_SESSION["product"]))
+{
+  header('Location:Admin_Login.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Products</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
-	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -19,7 +26,7 @@
 <body>
 	<div id="header">
 		<h2 style="color:#FFFFFF;"> ADD NEW STOCK</h2>
-		<a href=""> <button type="button" class="btn btn-danger"> Log Out </button></a>
+		<a href="Admin_Login.php"> <button type="button" class="btn btn-danger"> Log Out </button></a>
 	</div>
 	
 <div id="navigation"><br>

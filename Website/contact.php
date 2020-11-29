@@ -33,7 +33,7 @@
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="main.php">Home</a>
+        <a href="index.php">Home</a>
       </li>
       <li class="breadcrumb-item active">Contact</li>
     </ol>
@@ -98,7 +98,7 @@
 			<div class="control-group form-group">
             <div class="controls">
               <label>Insert a Image</label>
-              <input type="file" name="file" id="file">
+             <input type="file" name="file1" id="file1" />
             </div>
           </div>
 			

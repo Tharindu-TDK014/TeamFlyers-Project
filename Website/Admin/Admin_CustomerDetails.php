@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Products</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
-	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -18,7 +18,7 @@
 	<div id="header">
 		<h2 style="color:#FFFFFF;">Hi Admin- Customer Details</h2>
 		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
-		<a href=""  class="btn btn-danger"> Log Out</a>
+		<a href="Admin_Login.php"  class="btn btn-danger"> Log Out</a>
 	</div>
 <div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
@@ -65,14 +65,12 @@
 				  
                 <tr align="center">
 				<td><?php echo $row['C_Email'] ?></td>
-				 <td><?php echo $row['C_fname'] ?></td>
-                 <td><?php echo $row['C_lname'] ?></td>
+				<td><?php echo $row['C_fname'] ?></td>
+                <td><?php echo $row['C_lname'] ?></td>
 				<td><?php echo $row['C_Address'] ?></td>
 				<td><?php echo $row['C_Country'] ?></td>
 				<td><?php echo $row['C_ZipCode'] ?></td>
-				 <td><?php echo $row['C_Phone'] ?></td>
-				 <td>
-       			</td>
+				<td><?php echo $row['C_Phone'] ?></td>
                 </tr>
                
         <?php

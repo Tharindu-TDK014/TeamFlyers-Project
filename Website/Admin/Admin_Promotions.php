@@ -1,10 +1,17 @@
+<?php session_start();
+
+if(!isset($_SESSION["product"]))
+{
+  header('Location:Admin_Login.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Products</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
-	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -18,10 +25,10 @@
 	<div id="header">
 		<h2 style="color:#FFFFFF;">Hi Admin- Post Report</h2>
 		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
-		<a href=""  class="btn btn-danger"> Log Out</a>
+		<a href="Admin_Login.php"  class="btn btn-danger"> Log Out</a>
 	</div>
 	
-<div id="navigation"><br>
+	<div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
         <a href="Admin_Product.php" class="btn badge"><h5>Product Details</h5></a><br><br>
         <a href="Admin_Stock.php" class="btn badge"><h5>Stock</h5></a><br><br>
@@ -44,7 +51,7 @@
                 </tr>
               </thead>
               <tbody>
-			 <?php
+		<?php
 		
 		 $con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
@@ -68,17 +75,16 @@
 				<td><?php echo $row['P_ID'] ?></td>
 				<td><?php echo $row['Stock_ID'] ?></td>
 				<td><?php echo $row['P_Name'] ?></td>
-				 <td>Rs <?php echo $row['P_Price'] ?></td>
-				 <td><?php echo $row['P_Offers'] ?>%</td>
-				 <td>Rs<?php echo $row['P_OfferPrice'] ?></td>
+				<td>Rs <?php echo $row['P_Price'] ?></td>
+				<td><?php echo $row['P_Offers'] ?>%</td>
+				<td>Rs<?php echo $row['P_OfferPrice'] ?></td>
 				<td><?php echo $row['P_OfferStatus'] ?></td>
 				 
-				 <td>
-				
+				<td>				
 				 
 				<a  href="Set_Offer.php?id=<?php echo $row['P_ID']; ?>" title="click for edit" onclick="return confirm('Set an offer on this item?')" class="btn btn-primary">Set Offer</a> 
 		
-                  </td>
+                </td>
                 </tr>
                
         <?php

@@ -1,10 +1,17 @@
+<?php session_start();
+
+if(!isset($_SESSION["product"]))
+{
+  header('Location:Admin_Login.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Products</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
-	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="CSS/Style1.css">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -19,10 +26,10 @@
 		<h2 style="color:#FFFFFF;">Hi Admin- Product Details</h2>
 		<a href="Insert_Products.php"> <button type="button" class="btn btn-success"> Add Products </button></a>
 		<a href="CRM_Interface.php"  class="btn btn-primary"> CRM Management</a>
-		<a href=""  class="btn btn-danger"> Log Out</a>
+		<a href="Admin_Login.php"  class="btn btn-danger"> Log Out</a>
 	</div>
 	
-<div id="navigation"><br>
+	<div id="navigation"><br>
     	<a href="Admin_CustomerDetails.php" class="btn badge"><h5>Customer Details</h5></a><br><br>
         <a href="Admin_Product.php" class="btn badge"><h5>Product Details</h5></a><br><br>
         <a href="Admin_Stock.php" class="btn badge"><h5>Stock</h5></a><br><br>
@@ -45,12 +52,12 @@
                 <th width="100px">Price</th>
                 <th width="100px">Offer Price</th>
                 <th width="100px">Man Date</th>
-					<th width="100px">Exp Date</th>
+				<th width="100px">Exp Date</th>
                  
                 </tr>
               </thead>
               <tbody>
-			 <?php
+		<?php
 		
 		 $con = mysqli_connect("localhost: 3308","root","","e_com_db");
 		if(!$con)
@@ -73,23 +80,21 @@
                 <tr align="center">
 				<td><?php echo $row['P_ID'] ?></td>
                 <td><?php echo $row['Stock_ID'] ?></td>
-                  <td>
-				 <img src="<?php echo $row['P_filepath']?>" class="img-circle" width="50" height="50"> 
-				 </td>
-                 <td><?php echo $row['P_Qty'] ?></td>
+                <td>
+				<img src="<?php echo $row['P_filepath']?>" class="img-circle" width="50" height="50"> 
+				</td>
+                <td><?php echo $row['P_Qty'] ?></td>
 				<td><?php echo $row['P_Name'] ?></td>
 				<td><?php echo $row['P_Type'] ?></td>
 				<td><?php echo $row['P_Description'] ?></td>
-				 <td>Rs <?php echo $row['P_Price'] ?></td>
-				 <td>Rs<?php echo $row['P_OfferPrice'] ?></td>
-                 <td><?php echo $row['P_ManDate'] ?></td>
-                 <td><?php echo $row['P_ExpDate'] ?></td>
+				<td>Rs <?php echo $row['P_Price'] ?></td>
+				<td>Rs<?php echo $row['P_OfferPrice'] ?></td>
+                <td><?php echo $row['P_ManDate'] ?></td>
+                <td><?php echo $row['P_ExpDate'] ?></td>
 				 
-				 <td>
-				
-				 
+				<td>
 				<a  href="Edit_Product.php?id=<?php echo $row['P_ID']; ?>" title="click for edit" onclick="return confirm('Are you sure edit this item?')" class="btn btn-primary">Edit</a> 
-          </td>
+          		</td>
                 </tr>
                
         <?php
@@ -98,7 +103,7 @@
     
     
     
-      </table>
+      	</table>
 		</div>
 	
 	

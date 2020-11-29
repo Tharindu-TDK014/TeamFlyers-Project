@@ -2,7 +2,18 @@
 /* CSS Document */
 
 
+@page
+{
+	size : A4;
+	margin: 0;
+	
+}
 
+#print-btn
+{
+	display: none;
+	visibility: none;
+}
 body{
 	margin:0;
 	padding:0;
