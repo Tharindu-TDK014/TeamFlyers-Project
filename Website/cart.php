@@ -179,7 +179,7 @@ if(isset($_SESSION["cart_item"])){
 <a href="checkout.php"  > 
 <?php
 
-$db_handle->exequ( "INSERT INTO `cart`(`Cart_ID`, `No_Of_Products`, `Sub_Total`) VALUES(null,   '".$item["quantity"]."'  ,'".$total_price."' )"); 
+$db_handle->exequ( "INSERT INTO `cart`(`Cart_ID`,`C_Email`, `P_ID`, `Stock_ID`,  `No_Of_Products`, `Loyalty_Point_Discount`, `Sub_Total`) VALUES(null, null,null,null  '".$item["quantity"]."' ,null ,'".$total_price."' )"); 
 
 
 ?>
