@@ -17,7 +17,7 @@ $sql = "INSERT INTO `productreview`(`Review_ID`, `P_ID`, `P_Name`, `C_Name`, `Re
 
  //validation and redirection
     if(mysqli_query($con,$sql)){
-        header('Location:main.php');
+        header('Location:index.php');
     }
 
     //closing database connection
