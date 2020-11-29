@@ -183,7 +183,7 @@ $con = mysqli_connect("localhost","root","","e_com_db");
 		<img src="<?php echo $product_array[$key]["P_filepath"]; ?>" Class="figure-img" height="200" />
 		<div class="overlay">
 			<button type="button" class="btn btn-secondary"	title="Add to Wishlist"><i class="fa fa-heart"></i></button>
-			<a href="details.php?pid=<?php echo	$row['P_ID']; ?>" ><button type="button" class="btn btn-secondary"	title="More Details">
+			<a href="details.php?pid=<?php echo	$product_array[$key]['P_ID']; ?>" ><button type="button" class="btn btn-secondary"	title="More Details">
 				<i class="fa fa-search"></i></button>
 			</a>
 		</div>
