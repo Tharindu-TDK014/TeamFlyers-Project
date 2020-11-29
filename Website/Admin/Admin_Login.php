@@ -52,7 +52,7 @@
 		              $password=$_POST["txtpassword"];
 		              $valid = false;
                         //Database connection
-		                $con = mysqli_connect("localhost: 3308","root","","e_com_db");
+		                $con = mysqli_connect("localhost","id15543581_root","rsmkds@123AA","id15543581_e_com_db");
                         if(!$con){
                             die("Error occured in db connection, Please try again");
                         }
