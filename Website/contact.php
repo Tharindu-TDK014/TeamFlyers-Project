@@ -76,7 +76,7 @@
     <div class="row">
       <div class="col-lg-8 mb-4">
         <h3>Send us a Message</h3>
-     	<form id="formmsg" name="formmsg" method="post" action="postmsg.php" >
+     	<form id="formmsg" name="formmsg" method="post" action="" enctype="multipart/form-data" >
 			<input type="radio" name="rdotype" value="Help" id="rdotype_0" class="rdo1"/>
           Help
 			<input type="radio" name="rdotype" value="Complain" id="rdotype_1" class="rdo2" />
@@ -98,14 +98,44 @@
 			<div class="control-group form-group">
             <div class="controls">
               <label>Insert a Image</label>
-             <input type="file" name="file1" id="file1">
+             <input type="file" name="file" id="file">
             </div>
           </div>
-			
+			<?php
+			if(isset($_POST["btnSubmit"]))
+			{
+
+				$type=$_POST["rdotype"];
+				$message=$_POST["txtMsg"];
+				$email=$_POST["txtEmail"];
+				$image = "uploads/".basename($_FILES["file"]["name"]);
+						move_uploaded_file($_FILES["file"]["tmp_name"],$image);
+
+				//connecting to database
+				$con=mysqli_connect("localhost","root","","e_com_db");
+				if(!$con)
+				{
+					die("Error occured in db connection, Please try again");
+				}
+
+				//inserting values into sql
+				$sql="INSERT INTO `post`(`Post_ID`, `C_Email`, `Post_Type`, `Post_Date`, `Message`, `FilePath`) VALUES (NULL,'".$email."','".$type."','".date("y-m-d")."','".$message."','".$image."')";
+
+				//validation and redirection
+					if(mysqli_query($con,$sql)){
+						echo "Message sent Successfully";
+						header('Location:contact.php');
+					}
+
+					
+					
+
+			}
+				?>
 			
           
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton" name="btnSubmit">Send Message</button>
+          <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit">Send Message</button>
        </form>
       </div>
 
