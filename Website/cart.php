@@ -114,6 +114,10 @@ switch($_GET["action"]) {
 <link href="style.css" type="text/css" rel="stylesheet" />
 </HEAD>
 <BODY>
+
+		
+		
+	
 <div id="shopping-cart">
 <div class="txt-heading">Shopping Cart</div>
 
@@ -172,14 +176,15 @@ if(isset($_SESSION["cart_item"])){
 
 
 
-<a href="checkout.php">
-	
+<a href="checkout.php"  > 
 <?php
-$db_handle->exequ( "INSERT INTO `cart`(`Cart_ID`, `No_Of_Products`, `Sub_Total`) VALUES(null,   '".$item["quantity"]."'  ,'".$total_price."' )"); ?>
-	
 
-	<img src="img/ch.PNG" width="283" height="82" alt="checkout now"  />
-	
+$db_handle->exequ( "INSERT INTO `cart`(`Cart_ID`, `No_Of_Products`, `Sub_Total`) VALUES(null,   '".$item["quantity"]."'  ,'".$total_price."' )"); 
+?>
+<img src="img/ch.PNG" width="283" height="82" alt="checkout now"  /> 
+
+
+</form>	
 </td></tr>
 </tbody>
 </table>		
