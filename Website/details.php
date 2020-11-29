@@ -21,7 +21,7 @@ if(!isset($_SESSION["userName"]))
 	<div class="content-wrapper">
 		 <?php
 		
-		 $con = mysqli_connect("localhost","root","","e_com_db");
+		$con = mysqli_connect("localhost","id15543581_root","rsmkds@123AA","id15543581_e_com_db");
 		$_SESSION['pid'] = $_GET['pid'];
 		if(!$con)
 		{	
@@ -60,7 +60,7 @@ if(!isset($_SESSION["userName"]))
 		<div class="review">
 			<h3> Review</h3>
 			<?php
-		$con = mysqli_connect("localhost","root","","e_com_db");
+		$con = mysqli_connect("localhost","id15543581_root","rsmkds@123AA","id15543581_e_com_db");
 		if(!$con)
 			{	
 				die("Cannot connect to the DB");		
