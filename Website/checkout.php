@@ -87,7 +87,7 @@
 <body>
 	
 
-
+<h1> we do all payment cash on delivery</h1>
 
 <table class="table table-dark" >
   <tr>
