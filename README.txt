@@ -16,6 +16,8 @@ A Logged User can add a post (Complain/Help)
 Admin - Previlages
 _______________________________________________________________
 First admin should login to the Admin 
+Username = admin1@gmail.com
+Password = admin12345
 A Logged admin can add/delete/update stocks 
 A Logged admin can add/delete/update products
 A Logged admin can add/edit product offers
